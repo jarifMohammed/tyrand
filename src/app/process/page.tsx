@@ -73,13 +73,13 @@ function TimelineStep({ step }: { step: (typeof steps)[number] }) {
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="relative flex flex-col md:flex-row items-start gap-8 md:gap-16"
+      className="relative flex flex-col items-start gap-6 sm:gap-8 md:flex-row md:gap-16"
     >
       <div className="relative z-10 flex-shrink-0 mt-1 md:mt-2">
         <motion.div
           animate={{ borderColor: isInView ? "rgba(163,230,53,0.5)" : "rgba(38,38,38,1)", color: isInView ? "#a3e635" : "#737373", boxShadow: isInView ? "0 0 20px rgba(163,230,53,0.3)" : "0 0 0px rgba(163,230,53,0)" }}
           transition={{ duration: 0.5 }}
-          className="flex h-12 w-12 items-center justify-center rounded-full border bg-[#0A0A0A] font-mono text-sm font-medium"
+          className="flex h-10 w-10 items-center justify-center rounded-full border bg-[#0A0A0A] font-mono text-xs font-medium sm:h-12 sm:w-12 sm:text-sm"
         >
           {step.number}
         </motion.div>
@@ -87,8 +87,8 @@ function TimelineStep({ step }: { step: (typeof steps)[number] }) {
 
       <div className="flex-1 max-w-3xl">
         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.2em] text-lime-400/80">{step.subtitle}</span>
-        <h2 className="mb-6 text-3xl md:text-4xl font-semibold text-white tracking-tight">{step.title}</h2>
-        <p className="mb-10 text-base md:text-lg leading-relaxed text-neutral-400">{step.description}</p>
+        <h2 className="mb-6 text-2xl font-semibold text-white tracking-tight sm:text-3xl md:text-4xl">{step.title}</h2>
+        <p className="mb-10 text-sm leading-relaxed text-neutral-400 sm:text-base md:text-lg">{step.description}</p>
 
         <div className="border-l border-neutral-800 pl-6">
           <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-neutral-500">Key Deliverables</p>
@@ -132,15 +132,15 @@ export default function ProcessPage() {
 
   return (
     <main className="relative min-h-screen bg-[#0A0A0A]" style={{ background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(163,230,53,0.06), transparent 40%)`, backgroundColor: "#0A0A0A" }}>
-      <div className="mx-36 border-x border-neutral-800">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36 border-x border-neutral-800">
         {/* HERO */}
         <section className="relative overflow-hidden border-b border-neutral-800 bg-transparent">
           <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-          <div className="relative mx-auto max-w-5xl px-6 py-20 text-center md:py-28">
+          <div className="relative mx-auto max-w-5xl px-4 py-12 text-center sm:px-6 sm:py-16 md:py-20 lg:py-28">
             <FadeIn>
               <span className="mb-6 inline-block rounded-full border border-lime-400/20 bg-lime-400/5 px-5 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-lime-400">Our Process</span>
             </FadeIn>
-            <TextReveal text="Built for Precision" as="h1" className="mb-6 text-5xl font-extrabold leading-[1.08] tracking-tight text-white md:text-7xl lg:text-8xl" />
+            <TextReveal text="Built for Precision" as="h1" className="mb-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-7xl lg:text-8xl" />
             <FadeIn delay={0.3}>
               <p className="mx-auto max-w-2xl text-lg leading-relaxed text-neutral-400 md:text-xl">
                 A battle-tested, five-phase methodology refined across hundreds of digital products \u2014 engineered for quality, designed for scale.
@@ -162,7 +162,7 @@ export default function ProcessPage() {
         </section>
 
         {/* TIMELINE */}
-        <section ref={sectionRef} className="relative px-20 py-32">
+        <section ref={sectionRef} className="relative px-4 py-16 sm:px-8 sm:py-24 md:px-20 md:py-32">
           <div className="absolute left-[103px] top-40 bottom-40 w-px bg-neutral-800/40 hidden md:block">
             <div className="w-full bg-gradient-to-b from-lime-400 via-lime-400/50 to-transparent" style={{ height: `${lineHeight}%`, transition: "height 0.12s ease-out" }} />
           </div>
@@ -175,10 +175,10 @@ export default function ProcessPage() {
         </section>
 
         {/* PRINCIPLES */}
-        <section className="border-t border-neutral-800 pt-28">
-          <div className="space-y-12 px-12">
+        <section className="border-t border-neutral-800 pt-16 sm:pt-20 md:pt-28">
+          <div className="space-y-8 px-4 sm:space-y-12 sm:px-6 md:px-12">
             <div className="max-w-5xl space-y-4">
-              <FadeIn><h2 className="text-5xl font-semibold text-white">Engineering Principles</h2></FadeIn>
+              <FadeIn><h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">Engineering Principles</h2></FadeIn>
               <FadeIn delay={0.1}>
                 <p className="text-lg leading-7 text-neutral-200">Every line of code we write is guided by these non-negotiable principles \u2014 the foundation of products that scale from zero to millions.</p>
               </FadeIn>
@@ -193,7 +193,7 @@ export default function ProcessPage() {
                 const Icon = p.icon;
                 return (
                   <StaggerItem key={i}>
-                    <div className="group relative overflow-hidden border-b border-neutral-800 p-12 transition-colors duration-500 hover:bg-neutral-900/20 xl:border-r last:border-r-0">
+                    <div className="group relative overflow-hidden border-b border-neutral-800 p-6 transition-colors duration-500 hover:bg-neutral-900/20 sm:p-8 md:p-12 xl:border-r last:border-r-0">
                       <div className="mb-7"><Icon className="h-8 w-8 text-neutral-500 group-hover:text-lime-400 transition-colors duration-500" /></div>
                       <h4 className="relative text-xl font-medium leading-8 text-neutral-200 transition-colors duration-300 group-hover:text-white mb-3">{p.title}</h4>
                       <p className="relative text-sm leading-relaxed text-neutral-400 group-hover:text-neutral-300 transition-colors duration-300">{p.description}</p>
@@ -208,8 +208,8 @@ export default function ProcessPage() {
         {/* CTA */}
         <section className="relative border-t border-neutral-800 bg-transparent">
           <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
-          <div className="relative mx-auto max-w-3xl px-6 py-28 text-center md:py-36">
-            <TextReveal text="Ready to build something exceptional?" as="h2" className="mb-5 text-4xl font-extrabold text-white md:text-5xl" />
+          <div className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28 lg:py-36">
+            <TextReveal text="Ready to build something exceptional?" as="h2" className="mb-5 text-3xl font-extrabold text-white sm:text-4xl md:text-5xl" />
             <FadeIn delay={0.2}>
               <p className="mb-10 text-lg text-neutral-400">Let&apos;s turn your idea into a world-class digital product.</p>
             </FadeIn>

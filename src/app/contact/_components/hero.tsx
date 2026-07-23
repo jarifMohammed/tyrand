@@ -12,9 +12,9 @@ export default function ContactUs() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-36">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="border-x border-b border-neutral-800">
-          <div className="relative overflow-hidden border-b border-neutral-800 text-center py-32 md:px-20 xl:px-72">
+          <div className="relative overflow-hidden border-b border-neutral-800 text-center py-16 sm:py-20 md:py-24 md:px-20 xl:px-72">
             {/* Animated parallax background */}
             <div className="absolute inset-0 overflow-hidden">
               <motion.div
@@ -33,7 +33,7 @@ export default function ContactUs() {
                   Get In Touch
                 </span>
               </FadeIn>
-              <TextReveal text="Let&apos;s Build Something Exceptional" as="h2" className="text-4xl font-semibold text-white md:text-5xl" />
+              <TextReveal text="Let&apos;s Build Something Exceptional" as="h2" className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl" />
               <StaggerContainer staggerDelay={0.1} className="mt-6 flex flex-wrap items-center justify-center gap-4">
                 {["Design", "Engineering", "Strategy", "Support"].map((tag) => (
                   <StaggerItem key={tag}>

@@ -43,7 +43,7 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
           alt={alt}
           width={700}
           height={423}
-          className="h-[480px] w-full object-cover scale-110"
+          className="h-[300px] w-full object-cover scale-110 sm:h-[380px] md:h-[480px]"
         />
       </motion.div>
     </div>
@@ -52,12 +52,12 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
 
 export default function OurWorks() {
   return (
-    <section className="border border-neutral-800 pt-28 mx-36">
+    <section className="border border-neutral-800 pt-16 sm:pt-20 md:pt-28">
       {/* Heading */}
-      <div className="px-12">
+      <div className="px-4 sm:px-6 md:px-12">
         <FadeIn>
           <div className="max-w-4xl space-y-4">
-            <h2 className="text-5xl font-semibold text-white">
+            <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">
               At Tyrand
             </h2>
 
@@ -87,14 +87,14 @@ export default function OurWorks() {
           <StaggerItem key={index}>
             <div className="border-t border-neutral-800 pb-24 lg:border-r last:border-r-0">
               {/* Category */}
-              <div className="border-b border-neutral-800 px-12 py-7">
+              <div className="border-b border-neutral-800 px-4 py-5 sm:px-6 sm:py-7 md:px-12">
                 <h3 className="text-2xl font-medium text-neutral-400">
                   {project.category}
                 </h3>
               </div>
 
               {/* Content */}
-              <div className="space-y-7 px-12 pt-7">
+              <div className="space-y-7 px-4 pt-5 sm:px-6 sm:pt-7 md:px-12">
                 {/* Image */}
                 <ProjectImage src={project.image} alt={project.title} />
 

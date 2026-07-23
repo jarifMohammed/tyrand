@@ -20,7 +20,7 @@ export default function TrustedCompanies() {
 
   return (
     <section ref={ref}>
-      <div className="mx-36">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="relative border-x border-b border-neutral-800 bg-neutral-900/20 py-10">
           {/* Badge */}
           <FadeIn className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">

@@ -176,13 +176,13 @@ export default function DesignServices() {
         <section
           key={catIdx}
           id={cat.heading.toLowerCase().replace(/\s+/g, "-")}
-          className="mx-36 border border-t-0 border-neutral-800 pt-28 first:border-t"
+          className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36 border border-t-0 border-neutral-800 pt-16 sm:pt-20 md:pt-28 first:border-t"
         >
           {/* Heading */}
-          <div className="space-y-12 px-12">
+          <div className="space-y-8 px-4 sm:space-y-12 sm:px-6 md:px-12">
             <div className="max-w-5xl space-y-4">
               <FadeIn>
-                <h2 className="text-5xl font-semibold text-white">{cat.heading}</h2>
+                <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">{cat.heading}</h2>
               </FadeIn>
               <FadeIn delay={0.1}>
                 <p className="text-lg leading-7 text-neutral-200">{cat.description}</p>
@@ -199,7 +199,7 @@ export default function DesignServices() {
           {/* Services Grid */}
           <div className="mt-12 border-t border-neutral-800">
             <div className="space-y-12 pt-12">
-              <h3 className="px-12 text-3xl font-medium text-neutral-400">
+              <h3 className="px-4 text-2xl font-medium text-neutral-400 sm:px-6 sm:text-3xl md:px-12">
                 {cat.subheading}
               </h3>
 
@@ -218,7 +218,9 @@ export default function DesignServices() {
                           relative
                           overflow-hidden
                           border-b border-neutral-800
-                          p-12
+                          p-6
+                          sm:p-8
+                          md:p-12
                           transition-all
                           duration-500
                           hover:-translate-y-2
