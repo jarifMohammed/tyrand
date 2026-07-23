@@ -3,11 +3,136 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, ArrowUp } from "lucide-react";
+import { useState, useRef } from "react";
 
 export default function Footer() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    try {
+      if (!formRef.current) return;
+      const formData = new FormData(formRef.current);
+      const res = await fetch("/api/testimonial", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitMessage("Thank you for sharing your experience!");
+        formRef.current.reset();
+      } else {
+        setSubmitMessage("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setSubmitMessage("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="border-t border-neutral-800 bg-[#111111]">
       <div className="mx-36 py-12">
+        {/* Share Experience Section */}
+        <div className="mb-12 rounded-xl border border-neutral-800 bg-neutral-900/30 p-8">
+          <h3 className="mb-6 text-2xl font-semibold text-white">
+            Share Your Experience with Tyrand
+          </h3>
+          <form ref={formRef} onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-lg border border-neutral-800 bg-neutral-800/50 p-4">
+              <label className="mb-2 block text-sm font-medium text-neutral-300">
+                Full Name *
+              </label>
+              <input
+                name="fullName"
+                type="text"
+                required
+                className="w-full border-b border-zinc-700 bg-transparent text-white outline-none placeholder:text-stone-500"
+                placeholder="Your name"
+              />
+            </div>
+            <div className="rounded-lg border border-neutral-800 bg-neutral-800/50 p-4">
+              <label className="mb-2 block text-sm font-medium text-neutral-300">
+                Designation *
+              </label>
+              <input
+                name="designation"
+                type="text"
+                required
+                className="w-full border-b border-zinc-700 bg-transparent text-white outline-none placeholder:text-stone-500"
+                placeholder="Your role"
+              />
+            </div>
+            <div className="rounded-lg border border-neutral-800 bg-neutral-800/50 p-4">
+              <label className="mb-2 block text-sm font-medium text-neutral-300">
+                Product Built *
+              </label>
+              <input
+                name="productBuilt"
+                type="text"
+                required
+                className="w-full border-b border-zinc-700 bg-transparent text-white outline-none placeholder:text-stone-500"
+                placeholder="Website name or link"
+              />
+            </div>
+            <div className="rounded-lg border border-neutral-800 bg-neutral-800/50 p-4">
+              <label className="mb-2 block text-sm font-medium text-neutral-300">
+                Social Media Handle
+              </label>
+              <input
+                name="socialMediaHandle"
+                type="text"
+                className="w-full border-b border-zinc-700 bg-transparent text-white outline-none placeholder:text-stone-500"
+                placeholder="@yourhandle"
+              />
+            </div>
+            <div className="rounded-lg border border-neutral-800 bg-neutral-800/50 p-4">
+              <label className="mb-2 block text-sm font-medium text-neutral-300">
+                Your Photo
+              </label>
+              <input
+                name="image"
+                type="file"
+                accept="image/*"
+                className="w-full text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-lime-400 file:text-zinc-900 file:hover:bg-lime-300 file:cursor-pointer"
+              />
+            </div>
+            <div className="rounded-lg border border-neutral-800 bg-neutral-800/50 p-4 md:col-span-2">
+              <label className="mb-2 block text-sm font-medium text-neutral-300">
+                Description *
+              </label>
+              <textarea
+                name="description"
+                rows={3}
+                required
+                className="w-full resize-none border-b border-zinc-700 bg-transparent text-white outline-none placeholder:text-stone-500"
+                placeholder="Share your experience..."
+              />
+            </div>
+            <div className="flex flex-col justify-end">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="rounded-lg bg-lime-400 px-8 py-3 text-base font-medium text-zinc-900 transition hover:bg-lime-300 disabled:opacity-50"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+            </div>
+          </form>
+          {submitMessage && (
+            <p className="mt-4 text-lime-400">{submitMessage}</p>
+          )}
+        </div>
+
         {/* Top */}
         <div className="flex flex-col gap-10 xl:flex-row xl:items-center xl:justify-between">
           {/* Logo */}

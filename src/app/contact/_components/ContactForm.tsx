@@ -1,11 +1,84 @@
 "use client";
 
+import { useState } from "react";
+
+type ContactFormData = {
+  fullName: string;
+  email: string;
+  contactReasons: string[];
+  budget: number;
+  message: string;
+};
+
 export default function ContactForm() {
+  const [formData, setFormData] = useState<ContactFormData>({
+    fullName: "",
+    email: "",
+    contactReasons: [],
+    budget: 1000,
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  const contactReasonsOptions = [
+    "Web Design",
+    "Collaboration",
+    "Mobile App Design",
+    "Mobile App Development",
+    "Digital Marketing",
+    "AI App",
+    "AI Agent",
+    "Others",
+  ];
+
+  const handleCheckboxChange = (reason: string) => {
+    setFormData((prev) => {
+      const newReasons = prev.contactReasons.includes(reason)
+        ? prev.contactReasons.filter((r) => r !== reason)
+        : [...prev.contactReasons, reason];
+      return { ...prev, contactReasons: newReasons };
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitMessage("Thank you! We have received your inquiry.");
+        setFormData({
+          fullName: "",
+          email: "",
+          contactReasons: [],
+          budget: 1000,
+          message: "",
+        });
+      } else {
+        setSubmitMessage("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setSubmitMessage("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="border border-neutral-800 py-20 mx-36">
       <div className="mx-auto max-w-7xl">
-        <div className="space-y-10 border border-neutral-800 p-10">
-
+        <form onSubmit={handleSubmit} className="space-y-10 border border-neutral-800 p-10">
           {/* Name & Email */}
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
             <div className="rounded-lg border border-neutral-800 bg-neutral-800/50 p-8">
@@ -16,6 +89,9 @@ export default function ContactForm() {
               <input
                 type="text"
                 placeholder="Type here"
+                required
+                value={formData.fullName}
+                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 className="w-full border-b border-zinc-800 bg-transparent pb-3 text-lg text-white outline-none placeholder:text-stone-500"
               />
             </div>
@@ -28,6 +104,9 @@ export default function ContactForm() {
               <input
                 type="email"
                 placeholder="Type here"
+                required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full border-b border-zinc-800 bg-transparent pb-3 text-lg text-white outline-none placeholder:text-stone-500"
               />
             </div>
@@ -40,45 +119,17 @@ export default function ContactForm() {
             </h3>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <label className="flex items-center gap-3 text-lg text-white">
-                <input type="checkbox" className="h-5 w-5 accent-lime-400" />
-                Web Design
-              </label>
-
-              <label className="flex items-center gap-3 text-lg text-white">
-                <input type="checkbox" className="h-5 w-5 accent-lime-400" />
-                Collaboration
-              </label>
-
-              <label className="flex items-center gap-3 text-lg text-white">
-                <input type="checkbox" className="h-5 w-5 accent-lime-400" />
-                Mobile App Design
-              </label>
-              
-              <label className="flex items-center gap-3 text-lg text-white">
-                <input type="checkbox" className="h-5 w-5 accent-lime-400" />
-                Mobile App Development
-              </label>
-              
-              <label className="flex items-center gap-3 text-lg text-white">
-                <input type="checkbox" className="h-5 w-5 accent-lime-400" />
-                Digital Marketing
-              </label>
-              
-              <label className="flex items-center gap-3 text-lg text-white">
-                <input type="checkbox" className="h-5 w-5 accent-lime-400" />
-                AI App
-              </label>
-
-              <label className="flex items-center gap-3 text-lg text-white">
-                <input type="checkbox" className="h-5 w-5 accent-lime-400" />
-                AI Agent
-              </label>
-
-              <label className="flex items-center gap-3 text-lg text-white">
-                <input type="checkbox" className="h-5 w-5 accent-lime-400" />
-                Others
-              </label>
+              {contactReasonsOptions.map((reason) => (
+                <label key={reason} className="flex items-center gap-3 text-lg text-white">
+                  <input
+                    type="checkbox"
+                    className="h-5 w-5 accent-lime-400"
+                    checked={formData.contactReasons.includes(reason)}
+                    onChange={() => handleCheckboxChange(reason)}
+                  />
+                  {reason}
+                </label>
+              ))}
             </div>
           </div>
 
@@ -97,11 +148,14 @@ export default function ContactForm() {
                 type="range"
                 min="1000"
                 max="5000"
+                value={formData.budget}
+                onChange={(e) => setFormData({ ...formData, budget: Number(e.target.value) })}
                 className="h-2 w-full cursor-pointer accent-lime-400"
               />
 
               <div className="mt-3 flex justify-between text-white">
                 <span>$1,000</span>
+                <span>${formData.budget}</span>
                 <span>$5,000</span>
               </div>
             </div>
@@ -116,15 +170,26 @@ export default function ContactForm() {
             <textarea
               rows={6}
               placeholder="Type here"
+              required
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               className="w-full resize-none border-b border-zinc-800 bg-transparent text-lg text-white outline-none placeholder:text-stone-500"
             />
           </div>
 
           {/* Submit Button */}
-          <button className="rounded-lg bg-lime-400 px-11 py-4 text-lg font-medium text-zinc-900 transition hover:bg-lime-300">
-            Submit
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="rounded-lg bg-lime-400 px-11 py-4 text-lg font-medium text-zinc-900 transition hover:bg-lime-300 disabled:opacity-50"
+          >
+            {isSubmitting ? "Submitting..." : "Submit"}
           </button>
-        </div>
+
+          {submitMessage && (
+            <p className="text-lg text-lime-400">{submitMessage}</p>
+          )}
+        </form>
       </div>
     </section>
   );

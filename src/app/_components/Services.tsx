@@ -74,7 +74,11 @@ export default function Services() {
 
                 {/* Button */}
                 <Link
-                  href="#"
+                  href={`/Services-Page#${
+                    title === "Project Management" 
+                      ? "engineering" 
+                      : title.toLowerCase().replace(/\s+/g, "-")
+                  }`}
                   className="mt-16 flex items-center justify-center gap-2 rounded-lg bg-neutral-800 px-6 py-4 text-lg font-medium text-white transition hover:bg-neutral-700"
                 >
                   Learn More

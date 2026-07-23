@@ -1,13 +1,34 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
-const testimonials = [
+type Testimonial = {
+  title: string;
+  description: string;
+  name: string;
+  role: string;
+  image: string;
+  website: string;
+};
+
+type DbTestimonial = {
+  fullName: string;
+  designation: string;
+  productBuilt: string;
+  socialMediaHandle?: string;
+  description: string;
+  image?: string;
+};
+
+const defaultTestimonials: Testimonial[] = [
   {
     title:
       "Tyrand has been Instrumental in Transforming our Online Presence.",
     description:
-      "Their team&apos;s expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform. Our online sales have skyrocketed, and we couldn&apos;t be happier.",
+      "Their team's expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform. Our online sales have skyrocketed, and we couldn't be happier.",
     name: "John Smith",
     role: "CEO of Chic Boutique",
     image: "/image/client-1.png",
@@ -25,6 +46,35 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(defaultTestimonials);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const res = await fetch("/api/testimonials");
+        const data: { success: boolean; data: DbTestimonial[] } = await res.json();
+        if (data.success && data.data.length > 0) {
+          const formatted: Testimonial[] = data.data.map((item) => ({
+            title: item.description.slice(0, 60) + "...",
+            description: item.description,
+            name: item.fullName,
+            role: item.designation,
+            image: item.image || "/image/client-1.png",
+            website: item.socialMediaHandle || "#",
+          }));
+          setTestimonials([...defaultTestimonials, ...formatted]);
+        }
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
   return (
     <section>
       <div className="mx-36">
@@ -51,55 +101,59 @@ export default function Testimonials() {
           </div>
 
           {/* Testimonials */}
-          <div className="grid grid-cols-1 divide-y divide-neutral-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
-            {testimonials.map((item) => (
-              <div
-                key={item.name}
-                className="flex flex-col justify-between p-12"
-              >
-                <div>
-                  <h3 className="text-3xl font-medium leading-snug text-lime-300">
-                    {item.title}
-                  </h3>
+          {isLoading ? (
+            <div className="p-12 text-center text-white">Loading...</div>
+          ) : (
+            <div className="grid grid-cols-1 divide-y divide-neutral-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+              {testimonials.map((item, index) => (
+                <div
+                  key={item.name + index}
+                  className="flex flex-col justify-between p-12"
+                >
+                  <div>
+                    <h3 className="text-3xl font-medium leading-snug text-lime-300">
+                      {item.title}
+                    </h3>
 
-                  <p className="mt-6 text-lg leading-8 text-neutral-300">
-                    {item.description}
-                  </p>
-                </div>
-
-                {/* Client */}
-                <div className="mt-10 flex items-center justify-between rounded-xl border border-neutral-800 bg-neutral-900/30 p-4">
-                  <div className="flex items-center gap-4">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={56}
-                      height={56}
-                      className="h-14 w-14 rounded-lg object-cover"
-                    />
-
-                    <div>
-                      <h4 className="text-xl font-medium text-white">
-                        {item.name}
-                      </h4>
-
-                      <p className="text-neutral-400">
-                        {item.role}
-                      </p>
-                    </div>
+                    <p className="mt-6 text-lg leading-8 text-neutral-300">
+                      {item.description}
+                    </p>
                   </div>
 
-                  <Link
-                    href={item.website}
-                    className="flex items-center gap-2 rounded-lg bg-neutral-800 px-5 py-4 text-white transition hover:bg-neutral-700"
-                  >
-                    Open Website
-                    <ArrowUpRight size={18} />
-                  </Link>
+                  {/* Client */}
+                  <div className="mt-10 flex items-center justify-between rounded-xl border border-neutral-800 bg-neutral-900/30 p-4">
+                    <div className="flex items-center gap-4">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        width={56}
+                        height={56}
+                        className="h-14 w-14 rounded-lg object-cover"
+                      />
+
+                      <div>
+                        <h4 className="text-xl font-medium text-white">
+                          {item.name}
+                        </h4>
+
+                        <p className="text-neutral-400">
+                          {item.role}
+                        </p>
+                      </div>
+                    </div>
+
+                    <Link
+                      href={item.website}
+                      className="flex items-center gap-2 rounded-lg bg-neutral-800 px-5 py-4 text-white transition hover:bg-neutral-700"
+                    >
+                      Open Website
+                      <ArrowUpRight size={18} />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

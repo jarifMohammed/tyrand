@@ -170,6 +170,7 @@ export default function DesignServices() {
       {categories.map((cat, catIdx) => (
         <section
           key={catIdx}
+          id={cat.heading.toLowerCase().replace(/\s+/g, "-")}
           className="mx-36 border border-t-0 border-neutral-800 pt-28 first:border-t"
         >
           {/* Heading */}
