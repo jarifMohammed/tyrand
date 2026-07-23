@@ -110,13 +110,13 @@ export default function AboutPage() {
               </p>
               <p>
                 Our mission is simple: to bring elite engineering and world-class design
-                to companies tackling difficult problems. Whether it's architecting a 
+                to companies tackling difficult problems. Whether it&apos;s architecting a 
                 high-throughput microservices backend or crafting an intuitive interface 
                 for complex data, we approach every challenge with the same rigor.
               </p>
               <p className="border-l-2 border-lime-400 pl-6 italic text-neutral-300">
-                "We believe that when deep technical expertise meets obsessive design, 
-                the results are transformative."
+                &quot;We believe that when deep technical expertise meets obsessive design, 
+                the results are transformative.&quot;
               </p>
             </div>
           </div>

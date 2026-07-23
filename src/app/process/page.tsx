@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Plus, Minus, Code2, GitBranch, Gauge, ShieldCheck, TestTube2, LineChart } from "lucide-react";
+import { Code2, GitBranch, Gauge, ShieldCheck, TestTube2, LineChart } from "lucide-react";
 /* ═══════════════════════════════════════════
    DATA
    ═══════════════════════════════════════════ */
