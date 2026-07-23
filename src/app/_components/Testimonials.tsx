@@ -76,10 +76,10 @@ export default function Testimonials() {
 
   return (
     <section>
-      <div className="mx-36">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="border-x border-b border-neutral-800">
           {/* Header */}
-          <div className="relative overflow-hidden border-b border-neutral-800 px-6 py-20 text-center md:px-20 xl:px-72">
+          <div className="relative overflow-hidden border-b border-neutral-800 px-4 py-12 text-center sm:px-6 sm:py-16 md:px-20 md:py-20 xl:px-72">
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-image-zoom" style={{ backgroundImage: "url('/image/Testimonials-bg.png')" }} />
               <div className="absolute inset-0 animate-bg-glow-slow" style={{ background: "radial-gradient(ellipse at 50% 30%, rgba(163, 230, 53, 0.12), transparent 70%)", opacity: 0.25 }} />
@@ -89,7 +89,7 @@ export default function Testimonials() {
 
             <div className="relative z-10">
               <FadeIn>
-                <h2 className="text-4xl font-semibold text-white md:text-5xl">What Our Clients Say About Us</h2>
+                <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">What Our Clients Say About Us</h2>
               </FadeIn>
               <FadeIn delay={0.15}>
                 <p className="mx-auto mt-4 max-w-4xl text-lg leading-8 text-neutral-300">
@@ -106,16 +106,16 @@ export default function Testimonials() {
             <StaggerContainer staggerDelay={0.2} className="grid grid-cols-1 divide-y divide-neutral-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
               {testimonials.map((item, index) => (
                 <StaggerItem key={item.name + index}>
-                  <div className="flex flex-col justify-between p-12">
+                  <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-12">
                     <div>
-                      <h3 className="text-3xl font-medium leading-snug text-lime-300">{item.title}</h3>
-                      <p className="mt-6 text-lg leading-8 text-neutral-300">{item.description}</p>
+                      <h3 className="text-2xl font-medium leading-snug text-lime-300 sm:text-3xl">{item.title}</h3>
+                      <p className="mt-6 text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8">{item.description}</p>
                     </div>
-                    <div className="mt-10 flex items-center justify-between rounded-xl border border-neutral-800 bg-neutral-900/30 p-4">
+                    <div className="mt-10 flex flex-col gap-4 rounded-xl border border-neutral-800 bg-neutral-900/30 p-4 sm:flex-row sm:items-center sm:justify-between">
                       <div className="flex items-center gap-4">
                         <Image src={item.image} alt={item.name} width={56} height={56} className="h-14 w-14 rounded-lg object-cover" />
                         <div>
-                          <h4 className="text-xl font-medium text-white">{item.name}</h4>
+                          <h4 className="text-lg font-medium text-white sm:text-xl">{item.name}</h4>
                           <p className="text-neutral-400">{item.role}</p>
                         </div>
                       </div>

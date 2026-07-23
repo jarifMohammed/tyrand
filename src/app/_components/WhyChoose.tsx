@@ -32,10 +32,10 @@ const features = [
 export default function WhyChoose() {
   return (
     <section>
-      <div className="mx-36">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="border-x border-b border-neutral-800">
           {/* Header */}
-          <div className="relative overflow-hidden border-b border-neutral-800 px-6 py-20 text-center md:px-20 xl:px-72">
+          <div className="relative overflow-hidden border-b border-neutral-800 px-4 py-12 text-center sm:px-6 sm:py-16 md:px-20 md:py-20 xl:px-72">
             {/* Animated background */}
             <div className="absolute inset-0 overflow-hidden">
               <div
@@ -55,10 +55,10 @@ export default function WhyChoose() {
 
             <div className="relative z-10">
               <FadeIn>
-                <h2 className="text-4xl font-semibold text-white md:text-5xl">Why Choose Tyrand?</h2>
+                <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">Why Choose Tyrand?</h2>
               </FadeIn>
               <FadeIn delay={0.15}>
-                <p className="mx-auto mt-3 text-lg leading-7 text-neutral-300">
+                <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg">
                   Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results.
                 </p>
               </FadeIn>
@@ -72,7 +72,7 @@ export default function WhyChoose() {
           >
             {features.map(({ title, description, icon: Icon }, index) => (
               <StaggerItem key={index}>
-                <div className="p-10 lg:p-16 xl:p-20">
+                <div className="p-6 sm:p-10 lg:p-16 xl:p-20">
                   <div className="mb-10 flex items-center gap-5">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: -5 }}
@@ -81,9 +81,9 @@ export default function WhyChoose() {
                     >
                       <Icon className="h-8 w-8 text-lime-400" />
                     </motion.div>
-                    <h3 className="text-2xl font-medium text-white lg:text-3xl">{title}</h3>
+                    <h3 className="text-xl font-medium text-white sm:text-2xl lg:text-3xl">{title}</h3>
                   </div>
-                  <p className="text-lg leading-8 text-neutral-300">{description}</p>
+                  <p className="text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8">{description}</p>
                 </div>
               </StaggerItem>
             ))}

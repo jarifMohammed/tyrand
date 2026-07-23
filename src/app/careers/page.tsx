@@ -31,18 +31,18 @@ const openings = [
 export default function CareersPage() {
   return (
     <main className="relative min-h-screen bg-[#0A0A0A]">
-      <div className="mx-36 border-x border-neutral-800">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36 border-x border-neutral-800">
         {/* HERO */}
         <section className="relative overflow-hidden border-b border-neutral-800 bg-transparent">
           <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
 
-          <div className="relative mx-auto max-w-5xl px-6 py-32 text-center md:py-44">
+          <div className="relative mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-24 md:py-32 lg:py-44">
             <FadeIn>
               <span className="mb-6 inline-block rounded-full border border-lime-400/20 bg-lime-400/5 px-5 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-lime-400">
                 Careers
               </span>
             </FadeIn>
-            <TextReveal text="Join the Team That Ships Exceptional Products" as="h1" className="mb-8 text-4xl font-extrabold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl" />
+            <TextReveal text="Join the Team That Ships Exceptional Products" as="h1" className="mb-8 text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl" />
             <FadeIn delay={0.3}>
               <div className="mx-auto max-w-3xl">
                 <p className="text-lg leading-loose text-neutral-400 md:text-xl">
@@ -54,10 +54,10 @@ export default function CareersPage() {
         </section>
 
         {/* WHY WORK HERE */}
-        <section className="border-b border-neutral-800 px-6 py-32">
+        <section className="border-b border-neutral-800 px-4 py-16 sm:px-6 sm:py-24 md:py-32">
           <div className="mx-auto max-w-4xl">
             <FadeIn>
-              <h2 className="mb-10 text-3xl font-bold text-white md:text-4xl">Why Tyrand?</h2>
+              <h2 className="mb-10 text-2xl font-bold text-white sm:text-3xl md:text-4xl">Why Tyrand?</h2>
             </FadeIn>
             <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {[
@@ -78,10 +78,10 @@ export default function CareersPage() {
         </section>
 
         {/* OPEN POSITIONS */}
-        <section className="border-b border-neutral-800 px-6 py-32">
+        <section className="border-b border-neutral-800 px-4 py-16 sm:px-6 sm:py-24 md:py-32">
           <div className="mx-auto max-w-4xl">
             <FadeIn>
-              <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">Open Positions</h2>
+              <h2 className="mb-4 text-2xl font-bold text-white sm:text-3xl md:text-4xl">Open Positions</h2>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="mb-12 text-lg text-neutral-400">Don&apos;t see a perfect match? Send us your resume anyway at <span className="text-lime-400">careers@tyrand.com</span></p>
@@ -93,7 +93,7 @@ export default function CareersPage() {
                   <div className="group border-b border-neutral-800 py-8 transition-colors duration-300 hover:bg-neutral-900/20 last:border-b-0">
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                       <div>
-                        <h3 className="text-2xl font-medium text-white group-hover:text-lime-300 transition-colors duration-300">{job.title}</h3>
+                        <h3 className="text-xl font-medium text-white group-hover:text-lime-300 transition-colors duration-300 sm:text-2xl">{job.title}</h3>
                         <p className="mt-2 text-neutral-400">{job.description}</p>
                         <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-neutral-500">
                           <span className="flex items-center gap-1.5"><Briefcase className="h-4 w-4" />{job.type}</span>
@@ -115,8 +115,8 @@ export default function CareersPage() {
         <section className="relative border-t border-neutral-800 bg-transparent">
           <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
 
-          <div className="relative mx-auto max-w-3xl px-6 py-28 text-center md:py-36">
-            <TextReveal text="Ready to Build the Future With Us?" as="h2" className="mb-5 text-4xl font-extrabold text-white md:text-5xl" />
+          <div className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28 lg:py-36">
+            <TextReveal text="Ready to Build the Future With Us?" as="h2" className="mb-5 text-3xl font-extrabold text-white sm:text-4xl md:text-5xl" />
             <FadeIn delay={0.2}>
               <p className="mb-10 text-lg text-neutral-400">
                 We&apos;re always looking for exceptional talent. Let&apos;s create something remarkable together.

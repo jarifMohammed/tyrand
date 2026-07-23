@@ -80,8 +80,8 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="border border-neutral-800 py-20 mx-36">
-      <div className="mx-auto max-w-7xl">
+    <section className="border border-neutral-800 py-10 sm:py-16 md:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <form onSubmit={handleSubmit} className="space-y-10 border border-neutral-800 p-10">
           {/* Name & Email */}
           <StaggerContainer staggerDelay={0.08} className="grid grid-cols-1 gap-10 lg:grid-cols-2">

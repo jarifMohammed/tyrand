@@ -53,7 +53,7 @@ export default function AboutPage() {
 
   return (
     <main className="relative min-h-screen bg-[#0A0A0A]">
-      <div className="mx-36 border-x border-neutral-800">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36 border-x border-neutral-800">
         {/* HERO */}
         <section className="relative overflow-hidden border-b border-neutral-800 bg-transparent">
           <div
@@ -65,7 +65,7 @@ export default function AboutPage() {
             }}
           />
 
-          <div className="relative mx-auto max-w-5xl px-6 py-32 text-center md:py-44">
+          <div className="relative mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-24 md:py-32 lg:py-44">
             <FadeIn>
               <span className="mb-6 inline-block rounded-full border border-lime-400/20 bg-lime-400/5 px-5 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-lime-400">
                 About Tyrand
@@ -74,7 +74,7 @@ export default function AboutPage() {
             <TextReveal
               text="We Engineer Digital Realities"
               as="h1"
-              className="mb-8 text-4xl font-extrabold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl"
+              className="mb-8 text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
             />
             <FadeIn delay={0.3}>
               <div className="mx-auto max-w-3xl">
@@ -91,7 +91,7 @@ export default function AboutPage() {
         </section>
 
         {/* THE STORY */}
-        <section className="relative border-b border-neutral-800 bg-transparent px-6 py-32">
+        <section className="relative border-b border-neutral-800 bg-transparent px-4 py-16 sm:px-6 sm:py-24 md:py-32">
           <div className="mx-auto max-w-4xl">
             <FadeIn>
               <h2 className="mb-10 text-3xl font-bold text-white md:text-4xl">
@@ -131,11 +131,11 @@ export default function AboutPage() {
         </section>
 
         {/* OUR VALUES */}
-        <section className="border-t border-neutral-800 pt-28">
-          <div className="space-y-12 px-12">
+        <section className="border-t border-neutral-800 pt-16 sm:pt-20 md:pt-28">
+          <div className="space-y-8 px-4 sm:space-y-12 sm:px-6 md:px-12">
             <div className="max-w-5xl space-y-4">
               <FadeIn>
-                <h2 className="text-5xl font-semibold text-white">Our Values</h2>
+                <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">Our Values</h2>
               </FadeIn>
               <FadeIn delay={0.1}>
                 <p className="text-lg leading-7 text-neutral-200">
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 const Icon = val.icon;
                 return (
                   <StaggerItem key={i}>
-                    <div className="group relative overflow-hidden border-b border-neutral-800 p-12 transition-colors duration-500 hover:bg-neutral-900/20 xl:border-r last:border-r-0">
+                    <div className="group relative overflow-hidden border-b border-neutral-800 p-6 transition-colors duration-500 hover:bg-neutral-900/20 sm:p-8 md:p-12 xl:border-r last:border-r-0">
                       <motion.div
                         whileHover={{ scale: 1.15 }}
                         transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -189,11 +189,11 @@ export default function AboutPage() {
             }}
           />
 
-          <div className="relative mx-auto max-w-3xl px-6 py-28 text-center md:py-36">
+          <div className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28 lg:py-36">
             <TextReveal
               text="Want to partner with us?"
               as="h2"
-              className="mb-5 text-4xl font-extrabold text-white md:text-5xl"
+              className="mb-5 text-3xl font-extrabold text-white sm:text-4xl md:text-5xl"
             />
             <FadeIn delay={0.2}>
               <p className="mb-10 text-lg text-neutral-400">

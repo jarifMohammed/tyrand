@@ -31,10 +31,10 @@ const services = [
 export default function Services() {
   return (
     <section>
-      <div className="mx-36">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="border-x border-b border-neutral-800">
           {/* Section Header */}
-          <div className="relative overflow-hidden border-b border-neutral-800 px-6 py-20 text-center md:px-20 xl:px-72">
+          <div className="relative overflow-hidden border-b border-neutral-800 px-4 py-12 text-center sm:px-6 sm:py-16 md:px-20 md:py-20 xl:px-72">
             {/* Animated background */}
             <div className="absolute inset-0 overflow-hidden">
               <div
@@ -54,10 +54,10 @@ export default function Services() {
 
             <div className="relative z-10">
               <FadeIn>
-                <h2 className="text-4xl font-semibold text-white md:text-5xl">Our Services</h2>
+                <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">Our Services</h2>
               </FadeIn>
               <FadeIn delay={0.15}>
-                <p className="mx-auto mt-3 text-lg leading-7 text-neutral-300">
+                <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg">
                   Transform your brand with our innovative digital solutions that captivate and engage your audience.
                 </p>
               </FadeIn>
@@ -71,7 +71,7 @@ export default function Services() {
           >
             {services.map(({ title, description, icon: Icon }) => (
               <StaggerItem key={title}>
-                <div className="flex flex-col justify-between p-8 xl:p-12 group transition-all duration-500">
+                <div className="flex flex-col justify-between p-6 sm:p-8 xl:p-12 group transition-all duration-500">
                   <div>
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 6 }}
@@ -80,12 +80,12 @@ export default function Services() {
                     >
                       <Icon className="h-8 w-8 text-lime-400 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12" />
                     </motion.div>
-                    <h3 className="text-3xl font-semibold text-white">{title}</h3>
-                    <p className="mt-5 text-lg leading-8 text-neutral-300">{description}</p>
+                    <h3 className="text-2xl font-semibold text-white sm:text-3xl">{title}</h3>
+                    <p className="mt-5 text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8">{description}</p>
                   </div>
                   <Link
                     href={`/Services-Page#${title === "Project Management" ? "engineering" : title.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="mt-16 flex items-center justify-center gap-2 rounded-lg bg-neutral-800 px-6 py-4 text-lg font-medium text-white transition hover:bg-neutral-700"
+                    className="mt-10 flex items-center justify-center gap-2 rounded-lg bg-neutral-800 px-6 py-4 text-base font-medium text-white transition hover:bg-neutral-700 sm:mt-16 sm:text-lg"
                   >
                     Learn More <ArrowRight size={18} />
                   </Link>

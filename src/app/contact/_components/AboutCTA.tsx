@@ -6,7 +6,7 @@ import MagneticButton from "../../_components/motion/MagneticButton";
 
 export default function AboutCTA() {
   return (
-    <section className="border border-neutral-800 p-10 lg:p-20 mx-36">
+    <section className="border border-neutral-800 p-4 sm:p-6 md:p-10 lg:p-20">
       <div className="flex flex-col gap-12">
 
         {/* Bottom CTA */}

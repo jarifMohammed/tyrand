@@ -20,8 +20,8 @@ export default function Hero() {
 
   return (
     <section ref={ref}>
-      <div className="mx-36">
-        <div className="relative overflow-hidden border-x border-b border-neutral-800 bg-cover bg-center bg-no-repeat py-60">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
+        <div className="relative overflow-hidden border-x border-b border-neutral-800 bg-cover bg-center bg-no-repeat py-24 sm:py-32 md:py-40 lg:py-60">
           {/* Parallax Background with glow */}
           <div className="absolute inset-0 overflow-hidden">
             <motion.div
@@ -52,7 +52,7 @@ export default function Hero() {
             style={{ opacity: contentOpacity, y: contentY }}
             className="relative z-10 flex flex-col items-center text-center px-6"
           >
-            <h1 className="max-w-5xl text-5xl font-semibold leading-tight text-white md:text-6xl xl:text-7xl">
+            <h1 className="max-w-5xl text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl md:text-6xl xl:text-7xl">
               <TextReveal text="A Digital Product Studio" as="span" />
               <br />
               <TextReveal text="that will Work" as="span" delay={0.4} />

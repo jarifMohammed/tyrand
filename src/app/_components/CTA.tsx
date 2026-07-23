@@ -8,8 +8,8 @@ import MagneticButton from "./motion/MagneticButton";
 export default function CTA() {
   return (
     <section>
-      <div className="mx-36">
-        <div className="relative overflow-hidden border-x border-b border-neutral-800 px-6 py-20 md:px-20 xl:px-72">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
+        <div className="relative overflow-hidden border-x border-b border-neutral-800 px-4 py-12 sm:px-6 sm:py-16 md:px-20 md:py-20 xl:px-72">
           {/* Animated background */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-image-zoom" style={{ backgroundImage: "url('/image/CTA.png')" }} />
