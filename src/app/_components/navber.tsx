@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 const navLinks = [
   {
@@ -30,14 +33,19 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <header className="border-b border-neutral-800 bg-[#0F0F0F]">
+    <motion.header
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+      className="border-b border-neutral-800 bg-[#0F0F0F]"
+    >
       <div className="mx-36 flex h-24 items-center justify-between px-6 lg:px-20">
 
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/image/logo.png"
-            alt="Marvix Logo"
+            alt="Tyrand Logo"
             width={180}
             height={60}
             priority
@@ -47,14 +55,24 @@ export default function Navbar() {
 
         {/* Navigation */}
         <nav className="hidden items-center gap-7 lg:flex">
-          {navLinks.map((item) => (
-            <Link
+          {navLinks.map((item, index) => (
+            <motion.div
               key={item.name}
-              href={item.href}
-              className="rounded-lg px-7 py-3 text-lg font-medium text-neutral-200 transition hover:bg-neutral-800 hover:text-lime-400"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4,
+                delay: 0.1 + index * 0.05,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
             >
-              {item.name}
-            </Link>
+              <Link
+                href={item.href}
+                className="rounded-lg px-7 py-3 text-lg font-medium text-neutral-200 transition hover:bg-neutral-800 hover:text-lime-400"
+              >
+                {item.name}
+              </Link>
+            </motion.div>
           ))}
         </nav>
 
@@ -67,6 +85,6 @@ export default function Navbar() {
         </Link>
 
       </div>
-    </header>
+    </motion.header>
   );
 }

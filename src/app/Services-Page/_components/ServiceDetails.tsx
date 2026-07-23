@@ -23,9 +23,12 @@ import {
   Smartphone,
   Bot,
   Cpu,
-  Network
+  Network,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import FadeIn from "../../_components/motion/FadeIn";
+import StaggerContainer from "../../_components/motion/StaggerContainer";
+import StaggerItem from "../../_components/motion/StaggerItem";
 
 /* ── Data ── */
 
@@ -64,7 +67,8 @@ const categories: ServiceCategory[] = [
     heading: "Mobile App",
     subheading: "iOS & Android Development",
     label: "Our mobile app services include:",
-    description: "We craft native and cross-platform mobile experiences that deliver uncompromised performance, intuitive gestures, and seamless hardware integrations. From consumer apps to enterprise mobility solutions, we build for every screen.",
+    description:
+      "We craft native and cross-platform mobile experiences that deliver uncompromised performance, intuitive gestures, and seamless hardware integrations. From consumer apps to enterprise mobility solutions, we build for every screen.",
     services: [
       { title: "iOS Native Development", icon: Smartphone },
       { title: "Android Native Development", icon: Smartphone },
@@ -80,7 +84,8 @@ const categories: ServiceCategory[] = [
     heading: "AI & Agents",
     subheading: "Artificial Intelligence Solutions",
     label: "Our AI services include:",
-    description: "We integrate state-of-the-art LLMs, custom machine learning models, and autonomous AI agents to automate complex workflows and surface unprecedented insights from your data.",
+    description:
+      "We integrate state-of-the-art LLMs, custom machine learning models, and autonomous AI agents to automate complex workflows and surface unprecedented insights from your data.",
     services: [
       { title: "Autonomous AI Agents", icon: Bot },
       { title: "LLM Fine-Tuning & Integration", icon: Cpu },
@@ -176,13 +181,19 @@ export default function DesignServices() {
           {/* Heading */}
           <div className="space-y-12 px-12">
             <div className="max-w-5xl space-y-4">
-              <h2 className="text-5xl font-semibold text-white">{cat.heading}</h2>
-              <p className="text-lg leading-7 text-neutral-200">{cat.description}</p>
+              <FadeIn>
+                <h2 className="text-5xl font-semibold text-white">{cat.heading}</h2>
+              </FadeIn>
+              <FadeIn delay={0.1}>
+                <p className="text-lg leading-7 text-neutral-200">{cat.description}</p>
+              </FadeIn>
             </div>
 
-            <div className="inline-flex rounded-lg bg-neutral-800 px-4 py-3">
-              <p className="text-xl text-white">{cat.label}</p>
-            </div>
+            <FadeIn delay={0.15}>
+              <div className="inline-flex rounded-lg bg-neutral-800 px-4 py-3">
+                <p className="text-xl text-white">{cat.label}</p>
+              </div>
+            </FadeIn>
           </div>
 
           {/* Services Grid */}
@@ -192,93 +203,97 @@ export default function DesignServices() {
                 {cat.subheading}
               </h3>
 
-              <div className="grid grid-cols-1 border-y border-neutral-800 lg:grid-cols-2 xl:grid-cols-4">
+              <StaggerContainer
+                staggerDelay={0.05}
+                className="grid grid-cols-1 border-y border-neutral-800 lg:grid-cols-2 xl:grid-cols-4"
+              >
                 {cat.services.map((service, index) => {
                   const Icon = service.icon;
 
                   return (
-                    <div
-                      key={index}
-                      className="
-                        group
-                        relative
-                        overflow-hidden
-                        border-b border-neutral-800
-                        p-12
-                        transition-all
-                        duration-500
-                        hover:-translate-y-2
-                        hover:bg-neutral-900
-                        hover:shadow-[0_0_20px_rgba(163,230,53,0.08)]
-                        xl:border-r
-                        last:border-r-0
-                      "
-                    >
-                      {/* Glow Effect */}
+                    <StaggerItem key={index}>
                       <div
                         className="
-                          absolute
-                          inset-0
-                          bg-gradient-to-br
-                          from-lime-400/5
-                          via-transparent
-                          to-transparent
-                          opacity-0
-                          transition-opacity
-                          duration-500
-                          group-hover:opacity-100
-                        "
-                      />
-
-                      {/* Icon */}
-                      <div
-                        className="
+                          group
                           relative
-                          mb-7
-                          inline-flex
-                          rounded-xl
-                          border border-neutral-800
-                          bg-gradient-to-br
-                          from-lime-400/20
-                          to-transparent
-                          p-3
+                          overflow-hidden
+                          border-b border-neutral-800
+                          p-12
                           transition-all
                           duration-500
-                          group-hover:scale-110
-                          group-hover:rotate-6
-                          group-hover:border-lime-400/50
+                          hover:-translate-y-2
+                          hover:bg-neutral-900
+                          hover:shadow-[0_0_20px_rgba(163,230,53,0.08)]
+                          xl:border-r
+                          last:border-r-0
                         "
                       >
-                        <Icon
+                        {/* Glow Effect */}
+                        <div
                           className="
-                            h-10 w-10
-                            text-lime-400
-                            transition-transform
+                            absolute
+                            inset-0
+                            bg-gradient-to-br
+                            from-lime-400/5
+                            via-transparent
+                            to-transparent
+                            opacity-0
+                            transition-opacity
                             duration-500
-                            group-hover:scale-110
+                            group-hover:opacity-100
                           "
                         />
-                      </div>
 
-                      {/* Title */}
-                      <h4
-                        className="
-                          relative
-                          text-xl
-                          font-medium
-                          leading-8
-                          text-neutral-200
-                          transition-colors
-                          duration-300
-                          group-hover:text-white
-                        "
-                      >
-                        {service.title}
-                      </h4>
-                    </div>
+                        {/* Icon */}
+                        <div
+                          className="
+                            relative
+                            mb-7
+                            inline-flex
+                            rounded-xl
+                            border border-neutral-800
+                            bg-gradient-to-br
+                            from-lime-400/20
+                            to-transparent
+                            p-3
+                            transition-all
+                            duration-500
+                            group-hover:scale-110
+                            group-hover:rotate-6
+                            group-hover:border-lime-400/50
+                          "
+                        >
+                          <Icon
+                            className="
+                              h-10 w-10
+                              text-lime-400
+                              transition-transform
+                              duration-500
+                              group-hover:scale-110
+                            "
+                          />
+                        </div>
+
+                        {/* Title */}
+                        <h4
+                          className="
+                            relative
+                            text-xl
+                            font-medium
+                            leading-8
+                            text-neutral-200
+                            transition-colors
+                            duration-300
+                            group-hover:text-white
+                          "
+                        >
+                          {service.title}
+                        </h4>
+                      </div>
+                    </StaggerItem>
                   );
                 })}
-              </div>
+              </StaggerContainer>
             </div>
           </div>
         </section>
