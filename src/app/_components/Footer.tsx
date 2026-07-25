@@ -75,7 +75,7 @@ export default function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-800 bg-neutral-900/50 text-neutral-400 transition hover:border-lime-400 hover:bg-lime-400/10 hover:text-lime-400"
+                    className="flex h-10 w-10 items-center justify-center border border-neutral-800 bg-neutral-900/50 text-neutral-400 transition hover:border-lime-400 hover:bg-lime-400/10 hover:text-lime-400"
                     aria-label={s.name}
                   >
                     {s.icon}
@@ -88,7 +88,7 @@ export default function Footer() {
           {/* Col 2 — Industries */}
           <StaggerItem>
             <div>
-              <h4 className="mb-5 text-sm font-semibold uppercase tracking-wider text-white">
+              <h4 className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-white">
                 Industries
               </h4>
               <ul className="mb-8 space-y-3">
@@ -110,7 +110,7 @@ export default function Footer() {
           {/* Col 3 — Company Links */}
           <StaggerItem>
             <div>
-              <h4 className="mb-5 text-sm font-semibold uppercase tracking-wider text-white">
+              <h4 className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-white">
                 Company
               </h4>
               <ul className="space-y-3">
@@ -132,7 +132,7 @@ export default function Footer() {
           {/* Col 4 — Trust & Conversion */}
           <StaggerItem>
             <div>
-              <h4 className="mb-5 text-sm font-semibold uppercase tracking-wider text-white">
+              <h4 className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-white">
                 Let&apos;s Talk
               </h4>
 
@@ -140,7 +140,7 @@ export default function Footer() {
               <MagneticButton>
                 <Link
                   href="/contact"
-                  className="mb-8 inline-flex items-center gap-2 rounded-lg bg-lime-400 px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-lime-300"
+                  className="mb-8 inline-flex items-center gap-2 bg-lime-400 px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-lime-300"
                 >
                   Estimate Your Project
                   <ArrowRight className="h-4 w-4" />

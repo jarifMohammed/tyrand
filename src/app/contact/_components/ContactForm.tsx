@@ -86,8 +86,8 @@ export default function ContactForm() {
           {/* Name & Email */}
           <StaggerContainer staggerDelay={0.08} className="grid grid-cols-1 gap-10 lg:grid-cols-2">
             <StaggerItem>
-              <div className="rounded-lg border border-neutral-800 bg-neutral-800/50 p-8">
-                <label className="mb-5 block text-xl font-medium text-white">
+              <div className="border border-neutral-800 bg-neutral-800/50 p-8">
+                <label className="mb-5 block font-heading text-xl font-normal tracking-tight text-white">
                   Full Name
                 </label>
 
@@ -103,8 +103,8 @@ export default function ContactForm() {
             </StaggerItem>
 
             <StaggerItem>
-              <div className="rounded-lg border border-neutral-800 bg-neutral-800/50 p-8">
-                <label className="mb-5 block text-xl font-medium text-white">
+              <div className="border border-neutral-800 bg-neutral-800/50 p-8">
+                <label className="mb-5 block font-heading text-xl font-normal tracking-tight text-white">
                   Email
                 </label>
 
@@ -122,8 +122,8 @@ export default function ContactForm() {
 
           {/* Contact Reason */}
           <FadeIn delay={0.1}>
-            <div className="rounded-xl border border-neutral-800 bg-neutral-800/50 p-10">
-              <h3 className="mb-8 text-xl font-medium text-white">
+            <div className="border border-neutral-800 bg-neutral-800/50 p-10">
+              <h3 className="mb-8 font-heading text-xl font-normal tracking-tight text-white">
                 Why are you contacting us?
               </h3>
 
@@ -145,8 +145,8 @@ export default function ContactForm() {
 
           {/* Budget */}
           <FadeIn delay={0.15}>
-            <div className="rounded-xl border border-neutral-800 bg-neutral-800/50 p-10">
-              <h3 className="text-xl font-medium text-white">
+            <div className="border border-neutral-800 bg-neutral-800/50 p-10">
+              <h3 className="font-heading text-xl font-normal tracking-tight text-white">
                 Your Budget
               </h3>
 
@@ -175,8 +175,8 @@ export default function ContactForm() {
 
           {/* Message */}
           <FadeIn delay={0.2}>
-            <div className="rounded-xl border border-neutral-800 bg-neutral-800/50 p-10">
-              <label className="mb-5 block text-xl font-medium text-white">
+            <div className="border border-neutral-800 bg-neutral-800/50 p-10">
+              <label className="mb-5 block font-heading text-xl font-normal tracking-tight text-white">
                 Your Message
               </label>
 
@@ -197,7 +197,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="rounded-lg bg-lime-400 px-11 py-4 text-lg font-medium text-zinc-900 transition hover:bg-lime-300 disabled:opacity-50"
+                className="bg-lime-400 px-11 py-4 text-lg font-medium text-zinc-900 transition hover:bg-lime-300 disabled:opacity-50"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button>

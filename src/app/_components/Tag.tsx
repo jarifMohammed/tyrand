@@ -51,7 +51,7 @@ export default function TrustedCompanies() {
           <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 z-10">
             <FadeIn>
               <div className="rounded-full border border-neutral-800 bg-[#111111] px-6 py-3 text-center flex items-center justify-center whitespace-nowrap">
-                <span className="text-lg font-medium text-white">
+                <span className="text-sm font-medium uppercase tracking-[0.14em] text-white">
                   Trusted By 250+ Companies
                 </span>
               </div>
@@ -84,7 +84,7 @@ export default function TrustedCompanies() {
                       className="h-20 w-auto object-contain max-w-[200px]"
                     />
                   )}
-                  <span className="text-sm md:text-base font-semibold text-neutral-300 whitespace-nowrap tracking-widest uppercase">
+                  <span className="text-xs font-semibold text-neutral-300 whitespace-nowrap tracking-[0.14em] uppercase">
                     {brand.name}
                   </span>
                 </a>

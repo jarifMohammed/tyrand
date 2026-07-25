@@ -33,11 +33,11 @@ export default function ContactUs() {
                   Get In Touch
                 </span>
               </FadeIn>
-              <TextReveal text="Let&apos;s Build Something Exceptional" as="h2" className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl" />
+              <TextReveal text="Let&apos;s Build Something Exceptional" as="h2" className="font-heading font-normal text-3xl tracking-tight text-white sm:text-4xl md:text-5xl" />
               <StaggerContainer staggerDelay={0.1} className="mt-6 flex flex-wrap items-center justify-center gap-4">
                 {["Design", "Engineering", "Strategy", "Support"].map((tag) => (
                   <StaggerItem key={tag}>
-                    <span className="rounded-full border border-neutral-700 bg-neutral-800/50 px-5 py-2 text-sm text-neutral-300 backdrop-blur-sm">{tag}</span>
+                    <span className="border border-neutral-700 bg-neutral-800/50 px-5 py-2 text-sm text-neutral-300 backdrop-blur-sm">{tag}</span>
                   </StaggerItem>
                 ))}
               </StaggerContainer>

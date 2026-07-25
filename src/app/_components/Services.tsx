@@ -54,7 +54,7 @@ export default function Services() {
 
             <div className="relative z-10">
               <FadeIn>
-                <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">Our Services</h2>
+                <h2 className="font-heading font-normal text-3xl tracking-tight text-white sm:text-4xl md:text-5xl" style={{ lineHeight: "var(--lh-h1)" }}>Our Services</h2>
               </FadeIn>
               <FadeIn delay={0.15}>
                 <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg">
@@ -76,16 +76,16 @@ export default function Services() {
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 6 }}
                       transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                      className="mb-10 flex h-16 w-16 items-center justify-center rounded-lg border border-neutral-800 bg-gradient-to-br from-lime-400/20 to-transparent group-hover:border-lime-400/50 group-hover:shadow-[0_0_25px_rgba(163,230,53,0.25)]"
+                      className="mb-10 flex h-16 w-16 items-center justify-center border border-neutral-800 bg-gradient-to-br from-lime-400/20 to-transparent group-hover:border-lime-400/50 group-hover:shadow-[0_0_25px_rgba(163,230,53,0.25)]"
                     >
                       <Icon className="h-8 w-8 text-lime-400 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12" />
                     </motion.div>
-                    <h3 className="text-2xl font-semibold text-white sm:text-3xl">{title}</h3>
+                    <h3 className="font-heading font-normal text-2xl tracking-tight text-white sm:text-3xl">{title}</h3>
                     <p className="mt-5 text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8">{description}</p>
                   </div>
                   <Link
                     href={`/Services-Page#${title === "Project Management" ? "engineering" : title.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="mt-10 flex items-center justify-center gap-2 rounded-lg bg-neutral-800 px-6 py-4 text-base font-medium text-white transition hover:bg-neutral-700 sm:mt-16 sm:text-lg"
+                    className="mt-10 flex items-center justify-center gap-2 border border-neutral-800 bg-neutral-800 px-6 py-4 text-base font-medium text-white transition hover:bg-neutral-700 sm:mt-16 sm:text-lg"
                   >
                     Learn More <ArrowRight size={18} />
                   </Link>

@@ -5,12 +5,26 @@
 :root {
   --background: #1A1A1A;
   --foreground: #171717;
+
+  --text-display: clamp(3rem, 8vw, 7rem);
+  --text-h1: clamp(2.25rem, 5vw, 4rem);
+  --text-h2: clamp(1.75rem, 3.5vw, 2.5rem);
+  --text-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --text-body: clamp(1rem, 1.2vw, 1.125rem);
+
+  --lh-display: 0.95;
+  --lh-h1: 1.08;
+  --lh-h2: 1.2;
+  --lh-body: 1.65;
+
+  --ls-tight: -0.02em;
+  --ls-wide: 0.14em;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #1A1A1A;
-    --foreground: #ededed;
+    --foreground: #f0ede8;
   }
 }
 
@@ -21,7 +35,7 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 @layer utilities {

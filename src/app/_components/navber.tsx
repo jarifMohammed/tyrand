@@ -63,7 +63,7 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className="rounded-lg px-7 py-3 text-lg font-medium text-neutral-200 transition hover:bg-neutral-800 hover:text-lime-400"
+                className="px-7 py-3 text-lg font-medium tracking-wide text-neutral-200 transition hover:bg-neutral-800 hover:text-lime-400"
               >
                 {item.name}
               </Link>
@@ -74,7 +74,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           href="./contact"
-          className="hidden rounded-lg bg-lime-400 px-6 py-3 text-lg font-medium text-neutral-900 transition hover:bg-lime-300 lg:block"
+          className="hidden bg-lime-400 px-6 py-3 text-lg font-medium text-neutral-900 transition hover:bg-lime-300 lg:block"
         >
           Contact Us
         </Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-800 text-neutral-200 transition hover:border-lime-400 hover:text-lime-400 lg:hidden"
+          className="flex h-10 w-10 items-center justify-center border border-neutral-800 text-neutral-200 transition hover:border-lime-400 hover:text-lime-400 lg:hidden"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -110,7 +110,7 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block rounded-lg px-4 py-3 text-lg font-medium text-neutral-200 transition hover:bg-neutral-800 hover:text-lime-400"
+                    className="block px-4 py-3 text-lg font-medium tracking-wide text-neutral-200 transition hover:bg-neutral-800 hover:text-lime-400"
                   >
                     {item.name}
                   </Link>
@@ -119,7 +119,7 @@ export default function Navbar() {
               <Link
                 href="./contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 block rounded-lg bg-lime-400 px-4 py-3 text-center text-lg font-medium text-neutral-900 transition hover:bg-lime-300"
+                className="mt-2 block bg-lime-400 px-4 py-3 text-center text-lg font-medium text-neutral-900 transition hover:bg-lime-300"
               >
                 Contact Us
               </Link>

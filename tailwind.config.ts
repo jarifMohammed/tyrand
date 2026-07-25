@@ -12,6 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        heading: ["var(--font-playfair)", "Georgia", "serif"],
+        body: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+      },
       animation: {
         "glow-pulse": "glow-pulse 2s ease-in-out infinite alternate",
         "float": "float 6s ease-in-out infinite",
