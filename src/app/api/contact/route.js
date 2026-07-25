@@ -13,14 +13,14 @@ export async function POST(request) {
     await newContact.save();
     
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
-    
-    const logoPath = path.join(process.cwd(), "public", "image", "logo.png");
     
     // Email to info.tyrand@gmail.com
     const mailToUs = {
@@ -31,7 +31,7 @@ export async function POST(request) {
       text: `New Project Inquiry Received\n\nFull Name: ${data.fullName}\nEmail: ${data.email}\nContact Reasons: ${data.contactReasons?.join(", ") || "N/A"}\nBudget: $${data.budget || "N/A"}\nMessage: ${data.message}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <img src="cid:logo" alt="Tyrand Logo" style="width: 180px; margin-bottom: 20px;" />
+          <img src="https://www.tyrand.dev/image/logo.png" alt="Tyrand Logo" style="width: 180px; margin-bottom: 20px;" />
           <h2 style="color: #333;">New Project Inquiry Received</h2>
           <p><strong>Full Name:</strong> ${data.fullName}</p>
           <p><strong>Email:</strong> ${data.email}</p>
@@ -40,13 +40,6 @@ export async function POST(request) {
           <p><strong>Message:</strong> ${data.message}</p>
         </div>
       `,
-      attachments: [
-        {
-          filename: "logo.png",
-          path: logoPath,
-          cid: "logo",
-        },
-      ],
     };
     
     // Email to user (thank you)
@@ -58,7 +51,7 @@ export async function POST(request) {
       text: `Hi ${data.fullName},\n\nWe have received your inquiry and will get back to you soon!\n\nBest regards,\nThe Tyrand Team`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <img src="cid:logo" alt="Tyrand Logo" style="width: 180px; margin-bottom: 20px;" />
+          <img src="https://www.tyrand.dev/image/logo.png" alt="Tyrand Logo" style="width: 180px; margin-bottom: 20px;" />
           <h2 style="color: #333;">Thank You for Contacting Us!</h2>
           <p>Hi ${data.fullName},</p>
           <p>We have received your inquiry and will get back to you soon!</p>
@@ -66,13 +59,6 @@ export async function POST(request) {
           <p>The Tyrand Team</p>
         </div>
       `,
-      attachments: [
-        {
-          filename: "logo.png",
-          path: logoPath,
-          cid: "logo",
-        },
-      ],
     };
     
     await transporter.sendMail(mailToUs);

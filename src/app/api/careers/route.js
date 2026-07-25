@@ -191,23 +191,16 @@ export async function POST(request) {
     let emailsSent = true;
     try {
       const transporter = nodemailer.createTransport({
-        service: "gmail",
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_PASS,
         },
       });
 
-      const logoPath = path.join(process.cwd(), "public", "image", "logo.png");
-
-      const hasLogo = existsSync(logoPath);
-      const logoAttachment = hasLogo
-        ? [{ filename: "logo.png", path: logoPath, cid: "logo" }]
-        : [];
-
-      const logoImgTag = hasLogo
-        ? `<img src="cid:logo" alt="Tyrand Logo" style="width: 180px; margin-bottom: 20px;" />`
-        : `<h2 style="color: #a3e635; margin-bottom: 20px;">TYRAND</h2>`;
+      const logoImgTag = `<img src="https://www.tyrand.dev/image/logo.png" alt="Tyrand Logo" style="width: 180px; margin-bottom: 20px;" />`;
 
       // --- Email to Tyrand team ---
       const mailToTeam = {
@@ -247,7 +240,6 @@ export async function POST(request) {
           </div>
         `,
         attachments: [
-          ...logoAttachment,
           {
             filename: resumeFile.name || "resume",
             path: filepath,
@@ -286,7 +278,6 @@ export async function POST(request) {
             </div>
           </div>
         `,
-        attachments: logoAttachment,
       };
 
       await transporter.sendMail(mailToTeam);
