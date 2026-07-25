@@ -55,7 +55,7 @@ export default function WhyChoose() {
 
             <div className="relative z-10">
               <FadeIn>
-                <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">Why Choose Tyrand?</h2>
+                <h2 className="font-heading font-normal text-3xl tracking-tight text-white sm:text-4xl md:text-5xl" style={{ lineHeight: "var(--lh-h1)" }}>Why Choose Tyrand?</h2>
               </FadeIn>
               <FadeIn delay={0.15}>
                 <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-neutral-300 sm:text-lg">
@@ -77,11 +77,11 @@ export default function WhyChoose() {
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: -5 }}
                       transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                      className="flex h-16 w-16 items-center justify-center rounded-lg border border-neutral-800 bg-gradient-to-br from-lime-400/20 to-transparent"
+                      className="flex h-16 w-16 items-center justify-center border border-neutral-800 bg-gradient-to-br from-lime-400/20 to-transparent"
                     >
                       <Icon className="h-8 w-8 text-lime-400" />
                     </motion.div>
-                    <h3 className="text-xl font-medium text-white sm:text-2xl lg:text-3xl">{title}</h3>
+                    <h3 className="font-heading font-normal text-xl tracking-tight text-white sm:text-2xl lg:text-3xl">{title}</h3>
                   </div>
                   <p className="text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8">{description}</p>
                 </div>

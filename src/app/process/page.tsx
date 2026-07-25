@@ -87,7 +87,7 @@ function TimelineStep({ step }: { step: (typeof steps)[number] }) {
 
       <div className="flex-1 max-w-3xl">
         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.2em] text-lime-400/80">{step.subtitle}</span>
-        <h2 className="mb-6 text-2xl font-semibold text-white tracking-tight sm:text-3xl md:text-4xl">{step.title}</h2>
+        <h2 className="mb-6 font-heading font-normal text-2xl tracking-tight text-white sm:text-3xl md:text-4xl">{step.title}</h2>
         <p className="mb-10 text-sm leading-relaxed text-neutral-400 sm:text-base md:text-lg">{step.description}</p>
 
         <div className="border-l border-neutral-800 pl-6">
@@ -140,7 +140,7 @@ export default function ProcessPage() {
             <FadeIn>
               <span className="mb-6 inline-block rounded-full border border-lime-400/20 bg-lime-400/5 px-5 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-lime-400">Our Process</span>
             </FadeIn>
-            <TextReveal text="Built for Precision" as="h1" className="mb-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-7xl lg:text-8xl" />
+            <TextReveal text="Built for Precision" as="h1" className="mb-6 font-heading font-normal text-4xl leading-[1.08] tracking-tight text-white sm:text-5xl md:text-7xl lg:text-8xl" />
             <FadeIn delay={0.3}>
               <p className="mx-auto max-w-2xl text-lg leading-relaxed text-neutral-400 md:text-xl">
                 A battle-tested, five-phase methodology refined across hundreds of digital products \u2014 engineered for quality, designed for scale.
@@ -154,7 +154,7 @@ export default function ProcessPage() {
           <div className="grid grid-cols-2 divide-x divide-neutral-800 md:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="px-6 py-10 text-center md:py-14">
-                <p className="text-3xl font-extrabold text-lime-400 md:text-4xl"><CountUp target={stat.value} duration={2} /></p>
+                <p className="text-3xl font-heading font-normal text-lime-400 md:text-4xl"><CountUp target={stat.value} duration={2} /></p>
                 <p className="mt-2 text-sm font-medium uppercase tracking-wider text-neutral-500">{stat.label}</p>
               </div>
             ))}
@@ -178,13 +178,13 @@ export default function ProcessPage() {
         <section className="border-t border-neutral-800 pt-16 sm:pt-20 md:pt-28">
           <div className="space-y-8 px-4 sm:space-y-12 sm:px-6 md:px-12">
             <div className="max-w-5xl space-y-4">
-              <FadeIn><h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">Engineering Principles</h2></FadeIn>
+              <FadeIn><h2 className="text-3xl font-heading font-normal tracking-tight text-white sm:text-4xl md:text-5xl">Engineering Principles</h2></FadeIn>
               <FadeIn delay={0.1}>
                 <p className="text-lg leading-7 text-neutral-200">Every line of code we write is guided by these non-negotiable principles \u2014 the foundation of products that scale from zero to millions.</p>
               </FadeIn>
             </div>
             <FadeIn delay={0.15}>
-              <div className="inline-flex rounded-lg bg-neutral-800 px-4 py-3"><p className="text-xl text-white">Deep Tech DNA</p></div>
+              <div className="inline-flex bg-neutral-800 px-4 py-3"><p className="text-xl text-white">Deep Tech DNA</p></div>
             </FadeIn>
           </div>
           <div className="mt-12 border-t border-neutral-800">
@@ -195,7 +195,7 @@ export default function ProcessPage() {
                   <StaggerItem key={i}>
                     <div className="group relative overflow-hidden border-b border-neutral-800 p-6 transition-colors duration-500 hover:bg-neutral-900/20 sm:p-8 md:p-12 xl:border-r last:border-r-0">
                       <div className="mb-7"><Icon className="h-8 w-8 text-neutral-500 group-hover:text-lime-400 transition-colors duration-500" /></div>
-                      <h4 className="relative text-xl font-medium leading-8 text-neutral-200 transition-colors duration-300 group-hover:text-white mb-3">{p.title}</h4>
+                      <h4 className="relative font-heading font-normal text-xl tracking-tight leading-8 text-neutral-200 transition-colors duration-300 group-hover:text-white mb-3">{p.title}</h4>
                       <p className="relative text-sm leading-relaxed text-neutral-400 group-hover:text-neutral-300 transition-colors duration-300">{p.description}</p>
                     </div>
                   </StaggerItem>
@@ -209,12 +209,12 @@ export default function ProcessPage() {
         <section className="relative border-t border-neutral-800 bg-transparent">
           <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
           <div className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28 lg:py-36">
-            <TextReveal text="Ready to build something exceptional?" as="h2" className="mb-5 text-3xl font-extrabold text-white sm:text-4xl md:text-5xl" />
+            <TextReveal text="Ready to build something exceptional?" as="h2" className="mb-5 font-heading font-normal text-3xl tracking-tight text-white sm:text-4xl md:text-5xl" />
             <FadeIn delay={0.2}>
               <p className="mb-10 text-lg text-neutral-400">Let&apos;s turn your idea into a world-class digital product.</p>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <a href="/contact" className="inline-block rounded-xl bg-lime-400 px-10 py-4 text-lg font-bold text-neutral-900 transition-all duration-300 hover:bg-lime-300 hover:shadow-[0_0_40px_rgba(163,230,53,0.25)]">
+              <a href="/contact" className="inline-block bg-lime-400 px-10 py-4 text-lg font-bold text-neutral-900 transition-all duration-300 hover:bg-lime-300 hover:shadow-[0_0_40px_rgba(163,230,53,0.25)]">
                 Get in Touch \u2192
               </a>
             </FadeIn>

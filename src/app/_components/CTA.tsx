@@ -20,7 +20,7 @@ export default function CTA() {
 
           <div className="relative z-10">
             <div className="mx-auto flex flex-col items-center text-center">
-              <TextReveal text="Thank You for Your Interest in Tyrand" as="h2" className="text-3xl font-semibold leading-tight text-white md:text-4xl xl:text-5xl" />
+              <TextReveal text="Thank You for Your Interest in Tyrand" as="h2" className="font-heading font-normal text-3xl tracking-tight leading-tight text-white md:text-4xl xl:text-5xl" />
               <FadeIn delay={0.25}>
                 <p className="mt-5 max-w-3xl text-lg leading-8 text-neutral-300">
                   We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us.
@@ -28,7 +28,7 @@ export default function CTA() {
               </FadeIn>
               <FadeIn delay={0.4}>
                 <MagneticButton>
-                  <Link href="./contact" className="mt-12 inline-block rounded-lg bg-lime-400 px-8 py-4 text-lg font-medium text-neutral-900 transition-all duration-300 hover:bg-lime-300 hover:shadow-[0_0_40px_rgba(163,230,53,0.35)]">
+                  <Link href="./contact" className="mt-12 inline-block bg-lime-400 px-8 py-4 text-lg font-medium text-neutral-900 transition-all duration-300 hover:bg-lime-300 hover:shadow-[0_0_40px_rgba(163,230,53,0.35)]">
                     Start Project
                   </Link>
                 </MagneticButton>

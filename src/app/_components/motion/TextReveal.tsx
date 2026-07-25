@@ -35,7 +35,7 @@ export default function TextReveal({
                   : { opacity: 0, y: 24, filter: "blur(6px)" }
               }
               transition={{
-                duration: 0.5,
+                duration: 0.6,
                 delay: delay + i * 0.06,
                 ease: [0.22, 1, 0.36, 1],
               }}

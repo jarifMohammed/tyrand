@@ -37,7 +37,7 @@ export default function MagneticButton({
       style={{ x: springX, y: springY }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className={`inline-block ${className}`}
     >

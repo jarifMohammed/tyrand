@@ -182,7 +182,7 @@ export default function DesignServices() {
           <div className="space-y-8 px-4 sm:space-y-12 sm:px-6 md:px-12">
             <div className="max-w-5xl space-y-4">
               <FadeIn>
-                <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">{cat.heading}</h2>
+                <h2 className="text-3xl font-heading font-normal tracking-tight text-white sm:text-4xl md:text-5xl">{cat.heading}</h2>
               </FadeIn>
               <FadeIn delay={0.1}>
                 <p className="text-lg leading-7 text-neutral-200">{cat.description}</p>
@@ -190,7 +190,7 @@ export default function DesignServices() {
             </div>
 
             <FadeIn delay={0.15}>
-              <div className="inline-flex rounded-lg bg-neutral-800 px-4 py-3">
+              <div className="inline-flex bg-neutral-800 px-4 py-3">
                 <p className="text-xl text-white">{cat.label}</p>
               </div>
             </FadeIn>
@@ -223,9 +223,7 @@ export default function DesignServices() {
                           md:p-12
                           transition-all
                           duration-500
-                          hover:-translate-y-2
-                          hover:bg-neutral-900
-                          hover:shadow-[0_0_20px_rgba(163,230,53,0.08)]
+                          group-hover:shadow-[0_0_20px_rgba(163,230,53,0.08)]
                           xl:border-r
                           last:border-r-0
                         "
@@ -252,7 +250,6 @@ export default function DesignServices() {
                             relative
                             mb-7
                             inline-flex
-                            rounded-xl
                             border border-neutral-800
                             bg-gradient-to-br
                             from-lime-400/20
@@ -261,7 +258,6 @@ export default function DesignServices() {
                             transition-all
                             duration-500
                             group-hover:scale-110
-                            group-hover:rotate-6
                             group-hover:border-lime-400/50
                           "
                         >

@@ -36,7 +36,7 @@ export default function FAQ() {
 
             <div className="relative z-10">
               <FadeIn>
-                <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">Frequently Asked Questions</h2>
+                <h2 className="font-heading font-normal text-3xl tracking-tight text-white sm:text-4xl md:text-5xl" style={{ lineHeight: "var(--lh-h1)" }}>Frequently Asked Questions</h2>
               </FadeIn>
               <FadeIn delay={0.15}>
                 <p className="mt-4 text-lg text-neutral-300">
@@ -61,7 +61,7 @@ export default function FAQ() {
                           <motion.div
                             animate={{ borderColor: open ? "rgba(163, 230, 53, 0.5)" : "rgba(38, 38, 38, 1)", color: open ? "#a3e635" : "#ffffff", scale: open ? 1.05 : 1 }}
                             transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
-                            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border bg-gradient-to-b from-neutral-800 to-transparent text-lg font-semibold sm:h-16 sm:w-16 sm:text-2xl"
+                            className="flex h-12 w-12 shrink-0 items-center justify-center border bg-gradient-to-b from-neutral-800 to-transparent font-heading text-lg font-normal sm:h-16 sm:w-16 sm:text-2xl"
                           >
                             {String(faqIndex + 1).padStart(2, "0")}
                           </motion.div>

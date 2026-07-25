@@ -52,7 +52,7 @@ export default function Hero() {
             style={{ opacity: contentOpacity, y: contentY }}
             className="relative z-10 flex flex-col items-center text-center px-6"
           >
-            <h1 className="max-w-5xl text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl md:text-6xl xl:text-7xl">
+            <h1 className="max-w-5xl text-3xl font-heading font-normal tracking-tight text-white sm:text-4xl md:text-5xl md:text-6xl xl:text-7xl" style={{ lineHeight: "var(--lh-display)" }}>
               <TextReveal text="A Digital Product Studio" as="span" />
               <br />
               <TextReveal text="that will Work" as="span" delay={0.4} />
@@ -60,14 +60,14 @@ export default function Hero() {
 
             <StaggerContainer
               staggerDelay={0.08}
-              className="mt-8 flex max-w-5xl flex-wrap items-center justify-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/30 px-3 py-3 backdrop-blur-md"
+              className="mt-8 flex max-w-5xl flex-wrap items-center justify-center gap-3 border border-neutral-800 bg-neutral-900/30 px-3 py-3 backdrop-blur-md"
             >
               <StaggerItem>
-                <span className="text-lg text-neutral-400 xl:text-xl">For</span>
+                <span className="text-sm font-medium uppercase tracking-[0.14em] text-neutral-400">For</span>
               </StaggerItem>
               {["Startups", "Enterprise Leaders", "Media & Publishers", "Social Good"].map((item) => (
                 <StaggerItem key={item}>
-                  <span className="rounded-lg bg-neutral-800 px-6 py-3 text-base text-white xl:text-base">
+                  <span className="bg-neutral-800 px-6 py-3 text-base text-white xl:text-base">
                     {item}
                   </span>
                 </StaggerItem>
@@ -75,10 +75,10 @@ export default function Hero() {
             </StaggerContainer>
 
             <FadeIn delay={0.6} className="mt-12 flex flex-col gap-4 sm:flex-row">
-              <Link href="./protfolio" className="rounded-lg border border-neutral-800 bg-neutral-900/30 px-8 py-4 text-lg font-medium text-white backdrop-blur-md transition hover:bg-neutral-800">
+              <Link href="./protfolio" className="border border-neutral-800 bg-neutral-900/30 px-8 py-4 text-lg font-medium text-white backdrop-blur-md transition hover:bg-neutral-800">
                 Our Works
               </Link>
-              <Link href="./contact" className="rounded-lg bg-lime-400 px-6 py-4 text-lg font-medium text-neutral-900 transition hover:bg-lime-300">
+              <Link href="./contact" className="bg-lime-400 px-6 py-4 text-lg font-medium text-neutral-900 transition hover:bg-lime-300">
                 Contact Us
               </Link>
             </FadeIn>

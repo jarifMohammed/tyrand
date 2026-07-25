@@ -42,7 +42,7 @@ export default function CareersPage() {
                 Careers
               </span>
             </FadeIn>
-            <TextReveal text="Join the Team That Ships Exceptional Products" as="h1" className="mb-8 text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl" />
+            <TextReveal text="Join the Team That Ships Exceptional Products" as="h1" className="mb-8 font-heading font-normal text-3xl leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl" />
             <FadeIn delay={0.3}>
               <div className="mx-auto max-w-3xl">
                 <p className="text-lg leading-loose text-neutral-400 md:text-xl">
@@ -57,7 +57,7 @@ export default function CareersPage() {
         <section className="border-b border-neutral-800 px-4 py-16 sm:px-6 sm:py-24 md:py-32">
           <div className="mx-auto max-w-4xl">
             <FadeIn>
-              <h2 className="mb-10 text-2xl font-bold text-white sm:text-3xl md:text-4xl">Why Tyrand?</h2>
+              <h2 className="mb-10 font-heading font-normal text-2xl tracking-tight text-white sm:text-3xl md:text-4xl">Why Tyrand?</h2>
             </FadeIn>
             <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {[
@@ -67,7 +67,7 @@ export default function CareersPage() {
                 { title: "Growth & Ownership", description: "Take ownership of features from design to deployment. Your work ships to real users." },
               ].map((item, i) => (
                 <StaggerItem key={i}>
-                  <div className="rounded-xl border border-neutral-800 bg-neutral-900/30 p-8 transition-colors duration-300 hover:border-lime-400/30 hover:bg-neutral-900/50">
+                  <div className="border border-neutral-800 bg-neutral-900/30 p-8 transition-colors duration-300 hover:border-lime-400/30 hover:bg-neutral-900/50">
                     <h3 className="mb-3 text-xl font-medium text-white">{item.title}</h3>
                     <p className="text-neutral-400 leading-relaxed">{item.description}</p>
                   </div>
@@ -81,7 +81,7 @@ export default function CareersPage() {
         <section className="border-b border-neutral-800 px-4 py-16 sm:px-6 sm:py-24 md:py-32">
           <div className="mx-auto max-w-4xl">
             <FadeIn>
-              <h2 className="mb-4 text-2xl font-bold text-white sm:text-3xl md:text-4xl">Open Positions</h2>
+              <h2 className="mb-4 font-heading font-normal text-2xl tracking-tight text-white sm:text-3xl md:text-4xl">Open Positions</h2>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="mb-12 text-lg text-neutral-400">Don&apos;t see a perfect match? Send us your resume anyway at <span className="text-lime-400">careers@tyrand.com</span></p>
@@ -93,14 +93,14 @@ export default function CareersPage() {
                   <div className="group border-b border-neutral-800 py-8 transition-colors duration-300 hover:bg-neutral-900/20 last:border-b-0">
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                       <div>
-                        <h3 className="text-xl font-medium text-white group-hover:text-lime-300 transition-colors duration-300 sm:text-2xl">{job.title}</h3>
+                        <h3 className="font-heading font-normal text-xl tracking-tight text-white group-hover:text-lime-300 transition-colors duration-300 sm:text-2xl">{job.title}</h3>
                         <p className="mt-2 text-neutral-400">{job.description}</p>
                         <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-neutral-500">
                           <span className="flex items-center gap-1.5"><Briefcase className="h-4 w-4" />{job.type}</span>
                           <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" />{job.location}</span>
                         </div>
                       </div>
-                      <Link href="/contact" className="flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-900/30 px-6 py-3 text-white transition-all duration-300 hover:border-lime-400/50 hover:bg-neutral-800 hover:text-lime-400 shrink-0">
+                      <Link href="/contact" className="flex items-center gap-2 border border-neutral-800 bg-neutral-900/30 px-6 py-3 text-white transition-all duration-300 hover:border-lime-400/50 hover:bg-neutral-800 hover:text-lime-400 shrink-0">
                         Apply <ArrowRight size={16} />
                       </Link>
                     </div>
@@ -116,14 +116,14 @@ export default function CareersPage() {
           <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
 
           <div className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28 lg:py-36">
-            <TextReveal text="Ready to Build the Future With Us?" as="h2" className="mb-5 text-3xl font-extrabold text-white sm:text-4xl md:text-5xl" />
+            <TextReveal text="Ready to Build the Future With Us?" as="h2" className="mb-5 font-heading font-normal text-3xl tracking-tight text-white sm:text-4xl md:text-5xl" />
             <FadeIn delay={0.2}>
               <p className="mb-10 text-lg text-neutral-400">
                 We&apos;re always looking for exceptional talent. Let&apos;s create something remarkable together.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <Link href="/contact" className="inline-block rounded-xl bg-lime-400 px-10 py-4 text-lg font-bold text-neutral-900 transition-all duration-300 hover:bg-lime-300 hover:shadow-[0_0_40px_rgba(163,230,53,0.25)]">
+              <Link href="/contact" className="inline-block bg-lime-400 px-10 py-4 text-lg font-bold text-neutral-900 transition-all duration-300 hover:bg-lime-300 hover:shadow-[0_0_40px_rgba(163,230,53,0.25)]">
                 Get in Touch \u2192
               </Link>
             </FadeIn>

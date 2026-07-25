@@ -36,7 +36,7 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
   const y = useTransform(scrollYProgress, [0, 1], [20, -20]);
 
   return (
-    <div ref={ref} className="overflow-hidden rounded-xl">
+    <div ref={ref} className="overflow-hidden">
       <motion.div style={{ y }}>
         <Image
           src={src}
@@ -57,7 +57,7 @@ export default function OurWorks() {
       <div className="px-4 sm:px-6 md:px-12">
         <FadeIn>
           <div className="max-w-4xl space-y-4">
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-heading font-normal text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
               At Tyrand
             </h2>
 
@@ -70,7 +70,7 @@ export default function OurWorks() {
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <div className="mt-12 inline-flex rounded-lg bg-neutral-800 px-4 py-3">
+          <div className="mt-12 inline-flex bg-neutral-800 px-4 py-3">
             <p className="text-xl text-white">
               Here are ten examples of our notable works:
             </p>
@@ -101,18 +101,18 @@ export default function OurWorks() {
                 {/* Title + Website */}
                 <div className="flex items-center justify-between gap-5">
                   <div>
-                    <h4 className="text-2xl font-medium text-neutral-200">
+                    <h4 className="font-heading font-normal text-2xl tracking-tight text-neutral-200">
                       {project.title}
                     </h4>
 
-                    <div className="mt-3 inline-flex rounded-lg bg-neutral-800 px-4 py-2">
+                    <div className="mt-3 inline-flex bg-neutral-800 px-4 py-2">
                       <p className="text-lg text-neutral-400">
                         {project.website}
                       </p>
                     </div>
                   </div>
 
-                  <button className="rounded-lg bg-neutral-800 p-3 transition hover:bg-neutral-700">
+                  <button className="bg-neutral-800 p-3 transition hover:bg-neutral-700">
                     <ArrowUpRight className="h-7 w-7 text-lime-400" />
                   </button>
                 </div>

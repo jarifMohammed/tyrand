@@ -70,7 +70,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
     <div className="min-h-screen bg-[#050505] pt-32 pb-20 text-neutral-300">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h1 className="mb-4 font-heading font-normal text-4xl tracking-tight text-white sm:text-5xl">
             {data.title}
           </h1>
           <p className="mb-12 text-xl font-medium text-lime-400">
@@ -83,12 +83,12 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
             ))}
           </div>
 
-          <div className="mt-16 rounded-xl border border-neutral-800 bg-neutral-900/30 p-8 text-center">
-            <h3 className="mb-4 text-2xl font-semibold text-white">Ready to Innovate in {data.title}?</h3>
+          <div className="mt-16 border border-neutral-800 bg-neutral-900/30 p-8 text-center">
+            <h3 className="mb-4 font-heading text-2xl font-normal tracking-tight text-white">Ready to Innovate in {data.title}?</h3>
             <p className="mb-8 text-neutral-400">We sign strict NDAs before you even share your idea.</p>
             <a 
               href="/contact" 
-              className="inline-block rounded-lg bg-lime-400 px-8 py-3 text-base font-semibold text-zinc-900 transition hover:bg-lime-300"
+              className="inline-block bg-lime-400 px-8 py-3 text-base font-semibold text-zinc-900 transition hover:bg-lime-300"
             >
               Start a Confidential Conversation
             </a>
