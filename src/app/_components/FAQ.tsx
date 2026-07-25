@@ -41,7 +41,7 @@ export default function FAQ() {
               <FadeIn delay={0.15}>
                 <p className="mt-4 text-lg text-neutral-300">
                   Still have any questions? Contact our team via{" "}
-                  <span className="text-lime-400 cursor-pointer">hello@Tyrand.com</span>
+                  <span className="text-lime-400 cursor-pointer">hello@tyrand.dev</span>
                 </p>
               </FadeIn>
             </div>

@@ -255,26 +255,30 @@ export async function POST(request) {
 
       // --- Email to applicant ---
       const mailToApplicant = {
-        from: process.env.EMAIL_USER,
+        from: `"Tyrand Careers" <${process.env.EMAIL_USER}>`,
         to: email,
         subject: `Thank You for Applying to Tyrand — ${position}`,
         html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
-            ${logoImgTag}
-            <h2 style="color: #333;">Thank You for Applying!</h2>
-            <p style="font-size: 16px; line-height: 1.6;">Hi ${fullName},</p>
-            <p style="font-size: 16px; line-height: 1.6;">
-              We have received your application for the <strong>${position}</strong> position at Tyrand.
-              Our team will review your application and get back to you within 5–7 business days.
-            </p>
-            <p style="font-size: 16px; line-height: 1.6;">
-              In the meantime, feel free to explore more about us at
-              <a href="https://tyrand.com" style="color: #a3e635;">tyrand.com</a>.
-            </p>
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
-              <p style="font-size: 14px; color: #777;">Best regards,</p>
-              <p style="font-size: 14px; color: #777;"><strong>The Tyrand Team</strong></p>
-              <p style="font-size: 12px; color: #aaa; margin-top: 10px;">Helsinki, Finland &bull; info.tyrand@gmail.com</p>
+          <div style="background-color: #000000; color: #ffffff; font-family: 'Inter', system-ui, sans-serif; padding: 40px 20px; margin: 0; min-height: 100vh;">
+            <div style="max-width: 600px; margin: 0 auto; background-color: #000000; border: 1px solid #a3e635; border-radius: 8px; padding: 40px; box-shadow: 0 4px 20px rgba(163, 230, 53, 0.15);">
+              <div style="text-align: center; margin-bottom: 30px;">
+                ${logoImgTag}
+              </div>
+              <h2 style="color: #a3e635; font-size: 24px; font-weight: 600; margin-bottom: 20px; border-bottom: 1px solid rgba(163, 230, 53, 0.3); padding-bottom: 15px;">Thank You for Applying!</h2>
+              <p style="font-size: 16px; line-height: 1.6; color: #ffffff; margin-bottom: 15px;">Hi ${fullName},</p>
+              <p style="font-size: 16px; line-height: 1.6; color: #e5e5e5; margin-bottom: 15px;">
+                We have received your application for the <strong style="color: #a3e635;">${position}</strong> position at Tyrand.
+                Our team will review your application and get back to you within 5–7 business days.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6; color: #e5e5e5; margin-bottom: 30px;">
+                In the meantime, feel free to explore more about our work at
+                <a href="https://tyrand.dev" style="color: #a3e635; text-decoration: none; font-weight: 500;">tyrand.dev</a>.
+              </p>
+              <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(163, 230, 53, 0.2);">
+                <p style="font-size: 14px; color: #a3e635; margin-bottom: 5px;">Best regards,</p>
+                <p style="font-size: 16px; color: #ffffff; font-weight: 600; margin: 0;">The Tyrand Team</p>
+                <p style="font-size: 12px; color: #888888; margin-top: 15px;">Helsinki, Finland &bull; <a href="mailto:info.tyrand@gmail.com" style="color: #888888; text-decoration: none;">info.tyrand@gmail.com</a></p>
+              </div>
             </div>
           </div>
         `,

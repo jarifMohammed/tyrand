@@ -261,7 +261,7 @@ export default function CareersPage() {
             <FadeIn delay={0.1}>
               <p className="mb-12 text-lg text-neutral-400">
                 Don&apos;t see a perfect match? Send us your resume anyway at{" "}
-                <span className="text-lime-400">careers@tyrand.com</span>
+                <span className="text-lime-400">info.tyrand@gmail.com</span>
               </p>
             </FadeIn>
 

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://tyrand.com",
+    url: "https://tyrand.dev",
     title: "Tyrand | Deep Tech Software Agency",
     description: "Tyrand is a premier software agency specializing in AI Automation, CRM, POS, and complex deep tech integrations.",
     siteName: "Tyrand",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     icon: "/image/tyrand_logo.jpeg",
     apple: "/image/tyrand_logo.jpeg",
   },
-  metadataBase: new URL("https://tyrand.com"), // Update to actual production domain later
+  metadataBase: new URL("https://tyrand.dev"), // Update to actual production domain later
 };
 
 export default function RootLayout({

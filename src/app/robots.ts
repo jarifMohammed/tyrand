@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://tyrand.com/sitemap.xml',
+    sitemap: 'https://tyrand.dev/sitemap.xml',
   };
 }
