@@ -70,8 +70,8 @@ export default function Services() {
             className="grid grid-cols-1 divide-y divide-neutral-800 lg:grid-cols-3 lg:divide-x lg:divide-y-0"
           >
             {services.map(({ title, description, icon: Icon }) => (
-              <StaggerItem key={title}>
-                <div className="flex flex-col justify-between p-6 sm:p-8 xl:p-12 group transition-all duration-500">
+              <StaggerItem key={title} className="h-full">
+                <div className="flex h-full flex-col justify-between p-6 sm:p-8 xl:p-12 group transition-all duration-500">
                   <div>
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 6 }}

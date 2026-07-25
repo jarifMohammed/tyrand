@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "./_components/Footer";
 import Navbar from "./_components/navber";
 import PageTransition from "./_components/motion/PageTransition";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,12 +18,42 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Tyrand | Software Agency",
+  title: "Tyrand | Deep Tech Software Agency",
   description:
-    "Tyrand is a software agency specializing in Ai Automation, CRM, POS and project management for startups, enterprises, and forward-thinking organizations so solve every business challenge.",
-  icons: {
-    icon: "/image/logo.png",
+    "Tyrand is a premier software agency specializing in AI Automation, CRM, POS, and complex deep tech integrations for startups and enterprises.",
+  keywords: ["software agency", "deep tech", "AI automation", "CRM development", "custom software", "enterprise solutions"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+  openGraph: {
+    type: "website",
+    url: "https://tyrand.com",
+    title: "Tyrand | Deep Tech Software Agency",
+    description: "Tyrand is a premier software agency specializing in AI Automation, CRM, POS, and complex deep tech integrations.",
+    siteName: "Tyrand",
+    images: [{
+      url: "/image/tyrand_logo.jpeg",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tyrand | Deep Tech Software Agency",
+    description: "Specializing in AI Automation, CRM, POS, and complex deep tech integrations.",
+    images: ["/image/tyrand_logo.jpeg"],
+  },
+  icons: {
+    icon: "/image/tyrand_logo.jpeg",
+    apple: "/image/tyrand_logo.jpeg",
+  },
+  metadataBase: new URL("https://tyrand.com"), // Update to actual production domain later
 };
 
 export default function RootLayout({
@@ -35,9 +66,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <PageTransition>{children}</PageTransition>
-        <Footer />
+        <EdgeStoreProvider>
+          <Navbar />
+          <PageTransition>{children}</PageTransition>
+          <Footer />
+        </EdgeStoreProvider>
       </body>
     </html>
   );
