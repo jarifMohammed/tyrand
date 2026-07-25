@@ -2,7 +2,6 @@
 import connectDB from "@/lib/db";
 import Contact from "@/models/Contact";
 import nodemailer from "nodemailer";
-import path from "path";
 
 export async function POST(request) {
   try {

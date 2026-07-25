@@ -215,7 +215,7 @@ export default function ProcessPage() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <a href="/contact" className="inline-block bg-lime-400 px-10 py-4 text-lg font-bold text-neutral-900 transition-all duration-300 hover:bg-lime-300 hover:shadow-[0_0_40px_rgba(163,230,53,0.25)]">
-                Get in Touch \u2192
+                Get in Touch
               </a>
             </FadeIn>
           </div>
