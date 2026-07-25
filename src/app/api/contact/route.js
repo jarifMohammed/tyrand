@@ -24,9 +24,11 @@ export async function POST(request) {
     
     // Email to info.tyrand@gmail.com
     const mailToUs = {
-      from: process.env.EMAIL_USER,
+      from: `"Tyrand Website" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
+      replyTo: data.email,
       subject: "New Project Inquiry",
+      text: `New Project Inquiry Received\n\nFull Name: ${data.fullName}\nEmail: ${data.email}\nContact Reasons: ${data.contactReasons?.join(", ") || "N/A"}\nBudget: $${data.budget || "N/A"}\nMessage: ${data.message}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <img src="cid:logo" alt="Tyrand Logo" style="width: 180px; margin-bottom: 20px;" />
@@ -49,9 +51,11 @@ export async function POST(request) {
     
     // Email to user (thank you)
     const mailToUser = {
-      from: process.env.EMAIL_USER,
+      from: `"Tyrand Team" <${process.env.EMAIL_USER}>`,
       to: data.email,
+      replyTo: process.env.EMAIL_USER,
       subject: "Thank You for Contacting Tyrand!",
+      text: `Hi ${data.fullName},\n\nWe have received your inquiry and will get back to you soon!\n\nBest regards,\nThe Tyrand Team`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <img src="cid:logo" alt="Tyrand Logo" style="width: 180px; margin-bottom: 20px;" />

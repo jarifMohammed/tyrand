@@ -4,6 +4,8 @@ set -e
 echo "Setting up repository..."
 mkdir -p /var/www
 cd /var/www/tyrand
+git fetch origin
+git reset --hard origin/main
 
 echo "Cleaning up..."
 rm -rf node_modules package-lock.json yarn.lock || true
@@ -25,6 +27,7 @@ PORT=7001 pm2 start yarn --name "tyrand" -- start -p 7001
 pm2 save
 
 echo "Setting up Nginx..."
+if ! grep -q "ssl_certificate" /etc/nginx/sites-available/tyrand 2>/dev/null; then
 cat << 'EOF' > /etc/nginx/sites-available/tyrand
 server {
     listen 80;
@@ -40,6 +43,7 @@ server {
     }
 }
 EOF
+fi
 
 ln -sf /etc/nginx/sites-available/tyrand /etc/nginx/sites-enabled/tyrand
 nginx -t

@@ -211,9 +211,11 @@ export async function POST(request) {
 
       // --- Email to Tyrand team ---
       const mailToTeam = {
-        from: process.env.EMAIL_USER,
+        from: `"Tyrand Careers" <${process.env.EMAIL_USER}>`,
         to: process.env.EMAIL_USER,
+        replyTo: email,
         subject: `New Application: ${position} — ${fullName}`,
+        text: `New Career Application\n\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone || "N/A"}\nPosition: ${position}\nLinkedIn: ${linkedinUrl || "N/A"}\nPortfolio: ${portfolioUrl || "N/A"}\nCover Letter:\n${coverLetter || "N/A"}\n\nResume attached.`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
             ${logoImgTag}
@@ -257,7 +259,9 @@ export async function POST(request) {
       const mailToApplicant = {
         from: `"Tyrand Careers" <${process.env.EMAIL_USER}>`,
         to: email,
+        replyTo: process.env.EMAIL_USER,
         subject: `Thank You for Applying to Tyrand — ${position}`,
+        text: `Hi ${fullName},\n\nWe have received your application for the ${position} position at Tyrand.\nOur team will review your application and get back to you within 5–7 business days.\n\nIn the meantime, feel free to explore more about our work at tyrand.dev.\n\nBest regards,\nThe Tyrand Team`,
         html: `
           <div style="background-color: #000000; color: #ffffff; font-family: 'Inter', system-ui, sans-serif; padding: 40px 20px; margin: 0; min-height: 100vh;">
             <div style="max-width: 600px; margin: 0 auto; background-color: #000000; border: 1px solid #a3e635; border-radius: 8px; padding: 40px; box-shadow: 0 4px 20px rgba(163, 230, 53, 0.15);">

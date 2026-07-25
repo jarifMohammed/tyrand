@@ -1,4 +1,6 @@
 import paramiko
+import sys
+import time
 
 def run_command_interactive(ssh, command):
     print(f"Running: {command}")
@@ -16,6 +18,10 @@ try:
 except paramiko.ssh_exception.AuthenticationException:
     ssh.connect('187.127.138.222', username='root', password=' Alchemist@11590', timeout=10)
 
-run_command_interactive(ssh, "apt-get update && apt-get install -y certbot python3-certbot-nginx")
-run_command_interactive(ssh, "certbot --nginx -d tyrand.dev -d www.tyrand.dev --non-interactive --agree-tos -m mohammedjairf10@gmail.com")
+print("Uploading setup script...")
+sftp = ssh.open_sftp()
+sftp.put('remote_setup.sh', '/tmp/remote_setup.sh')
+sftp.close()
+
+run_command_interactive(ssh, "bash /tmp/remote_setup.sh")
 ssh.close()
