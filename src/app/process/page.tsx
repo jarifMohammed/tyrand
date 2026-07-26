@@ -85,7 +85,7 @@ function TimelineStep({ step }: { step: (typeof steps)[number] }) {
         </motion.div>
       </div>
 
-      <div className="flex-1 max-w-3xl">
+      <div className="flex-1 max-w-3xl pl-11 sm:pl-0">
         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.2em] text-lime-400/80">{step.subtitle}</span>
         <h2 className="mb-6 font-heading font-normal text-2xl tracking-tight text-white sm:text-3xl md:text-4xl">{step.title}</h2>
         <p className="mb-10 text-sm leading-relaxed text-neutral-400 sm:text-base md:text-lg">{step.description}</p>
@@ -166,7 +166,7 @@ export default function ProcessPage() {
           <div className="absolute left-[103px] top-40 bottom-40 w-px bg-neutral-800/40 hidden md:block">
             <div className="w-full bg-gradient-to-b from-lime-400 via-lime-400/50 to-transparent" style={{ height: `${lineHeight}%`, transition: "height 0.12s ease-out" }} />
           </div>
-          <div className="absolute left-[43px] top-40 bottom-40 w-px bg-neutral-800/40 md:hidden">
+          <div className="absolute left-[36px] top-40 bottom-40 w-px bg-neutral-800/40 md:hidden">
             <div className="w-full bg-gradient-to-b from-lime-400 via-lime-400/50 to-transparent" style={{ height: `${lineHeight}%`, transition: "height 0.12s ease-out" }} />
           </div>
           <div className="space-y-24 md:space-y-32 relative z-10">
