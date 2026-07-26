@@ -52,7 +52,7 @@ export default function TrustedCompanies() {
             <FadeIn>
               <div className="rounded-full border border-neutral-800 bg-[#111111] px-6 py-3 text-center flex items-center justify-center whitespace-nowrap">
                 <span className="text-sm font-medium uppercase tracking-[0.14em] text-white">
-                  Trusted By 250+ Companies
+                  Trusted By 25+ Companies
                 </span>
               </div>
             </FadeIn>
