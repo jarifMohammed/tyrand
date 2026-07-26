@@ -62,7 +62,7 @@ export default function Hero() {
           {/* Subtitle */}
           <FadeIn delay={0.3}>
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-neutral-400 sm:text-base sm:leading-7 md:mt-6">
-              We Design, Engineer and Scale Custom Software — From AI-Powered Platforms To Enterprise Systems.
+              We Design, Engineer and Scale Custom Software From AI-Powered Platforms To Enterprise Systems.
             </p>
           </FadeIn>
 
