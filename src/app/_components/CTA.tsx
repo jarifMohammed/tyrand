@@ -4,19 +4,14 @@ import Link from "next/link";
 import TextReveal from "./motion/TextReveal";
 import FadeIn from "./motion/FadeIn";
 import MagneticButton from "./motion/MagneticButton";
+import SectionBackground from "./SectionBackground";
 
 export default function CTA() {
   return (
     <section>
-      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="relative overflow-hidden border-x border-b border-neutral-800 px-4 py-12 sm:px-6 sm:py-16 md:px-20 md:py-20 xl:px-72">
-          {/* Animated background */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-image-zoom" style={{ backgroundImage: "url('/image/CTA.png')" }} />
-            <div className="absolute inset-0 animate-bg-glow-slow" style={{ background: "radial-gradient(ellipse at 50% 30%, rgba(163, 230, 53, 0.15), transparent 70%)", opacity: 0.3 }} />
-          </div>
-          <div className="absolute inset-0 bg-black/50 animate-overlay-breathe" />
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lime-400/40 to-transparent animate-border-glow" />
+          <SectionBackground src="/image/CTA.webp" />
 
           <div className="relative z-10">
             <div className="mx-auto flex flex-col items-center text-center">

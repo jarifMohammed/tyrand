@@ -74,6 +74,19 @@ body {
   .animate-image-zoom {
     animation: image-zoom 20s ease-in-out infinite alternate;
   }
+
+  .animate-page-fade-in {
+    animation: page-fade-in 0.4s ease-out forwards;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes glow-pulse {
@@ -116,18 +129,20 @@ body {
 
 @keyframes overlay-breathe {
   0% {
-    background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(0,0,0,0.7));
+    opacity: 0.8;
   }
   100% {
-    background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75));
+    opacity: 1;
   }
 }
 
 @keyframes image-zoom {
   0% {
     transform: scale(1);
+    will-change: transform;
   }
   100% {
     transform: scale(1.08);
+    will-change: transform;
   }
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
@@ -21,16 +22,25 @@ export default function Hero() {
   return (
     <section ref={ref} className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
       <div className="relative overflow-hidden border border-neutral-800 bg-cover bg-center bg-no-repeat py-20 sm:py-24 md:py-32 lg:py-44 xl:py-60">
-        {/* Parallax Background */}
+        {/* Parallax Background — using next/image for optimization */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-image-zoom"
+            className="absolute inset-0"
             style={{
-              backgroundImage: "url('/image/hero-bg.png')",
               y: bgY,
               scale: 1.1,
             }}
-          />
+          >
+            <Image
+              src="/image/hero-bg.webp"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+              quality={80}
+            />
+          </motion.div>
           <div
             className="absolute inset-0 animate-bg-glow-slow"
             style={{

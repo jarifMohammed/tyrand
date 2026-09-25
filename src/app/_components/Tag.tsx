@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import FadeIn from "./motion/FadeIn";
 import { motion } from "motion/react";
 
@@ -34,6 +35,11 @@ const brands = [
     name: "Social Chamber",
     url: "https://www.thesocialchamber.com/",
     logo: "https://www.thesocialchamber.com/img/logo.png",
+  },
+  {
+    name: "SecondSight",
+    url: "https://secondsight.tech/",
+    logo: "/image/secondsigt.webp",
   }
 ];
 
@@ -78,10 +84,13 @@ export default function TrustedCompanies() {
                   className="flex flex-col items-center justify-center gap-4 transition-transform duration-300 hover:scale-105"
                 >
                   {brand.logo && (
-                    <img 
+                    <Image
                       src={brand.logo} 
                       alt={`${brand.name} logo`} 
+                      width={200}
+                      height={80}
                       className="h-20 w-auto object-contain max-w-[200px]"
+                      loading="lazy"
                     />
                   )}
                   <span className="text-xs font-semibold text-neutral-300 whitespace-nowrap tracking-[0.14em] uppercase">

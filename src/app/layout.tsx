@@ -5,7 +5,7 @@ import "./globals.css";
 import Footer from "./_components/Footer";
 import Navbar from "./_components/navber";
 import PageTransition from "./_components/motion/PageTransition";
-import { EdgeStoreProvider } from "@/lib/edgestore";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -68,11 +68,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${playfair.variable} antialiased`}
       >
-        <EdgeStoreProvider>
-          <Navbar />
-          <PageTransition>{children}</PageTransition>
-          <Footer />
-        </EdgeStoreProvider>
+        <Navbar />
+        <PageTransition>{children}</PageTransition>
+        <Footer />
       </body>
     </html>
   );

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import FadeIn from "./motion/FadeIn";
 import StaggerContainer from "./motion/StaggerContainer";
 import StaggerItem from "./motion/StaggerItem";
+import SectionBackground from "./SectionBackground";
 
 type Testimonial = {
   title: string;
@@ -32,7 +33,7 @@ const defaultTestimonials: Testimonial[] = [
     description: "Their team's expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform. Our online sales have skyrocketed, and we couldn't be happier.",
     name: "John Smith",
     role: "CEO of Chic Boutique",
-    image: "/image/client-1.png",
+    image: "/image/client-1.webp",
     website: "#",
   },
   {
@@ -40,7 +41,7 @@ const defaultTestimonials: Testimonial[] = [
     description: "They understood our vision for a mobile app that streamlined our food delivery service. The app they delivered exceeded our expectations, and our customers love the seamless ordering experience. Tyrand is a trusted partner we highly recommend.",
     name: "Sarah Johnson",
     role: "Founder of HungryBites",
-    image: "/image/client-2.png",
+    image: "/image/client-2.webp",
     website: "#",
   },
 ];
@@ -60,7 +61,7 @@ export default function Testimonials() {
             description: item.description,
             name: item.fullName,
             role: item.designation,
-            image: item.image || "/image/client-1.png",
+            image: item.image || "/image/client-1.webp",
             website: item.socialMediaHandle || "#",
           }));
           setTestimonials([...defaultTestimonials, ...formatted]);
@@ -76,16 +77,11 @@ export default function Testimonials() {
 
   return (
     <section>
-      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="border-x border-b border-neutral-800">
           {/* Header */}
           <div className="relative overflow-hidden border-b border-neutral-800 px-4 py-12 text-center sm:px-6 sm:py-16 md:px-20 md:py-20 xl:px-72">
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-image-zoom" style={{ backgroundImage: "url('/image/Testimonials-bg.png')" }} />
-              <div className="absolute inset-0 animate-bg-glow-slow" style={{ background: "radial-gradient(ellipse at 50% 30%, rgba(163, 230, 53, 0.12), transparent 70%)", opacity: 0.25 }} />
-            </div>
-            <div className="absolute inset-0 bg-black/50 animate-overlay-breathe" />
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lime-400/30 to-transparent animate-border-glow" />
+            <SectionBackground src="/image/Testimonials-bg.webp" />
 
             <div className="relative z-10">
               <FadeIn>
@@ -101,7 +97,27 @@ export default function Testimonials() {
 
           {/* Testimonials */}
           {isLoading ? (
-            <div className="p-12 text-center text-white">Loading...</div>
+            <div className="grid grid-cols-1 divide-y divide-neutral-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+              {[0, 1].map((i) => (
+                <div key={i} className="flex h-96 flex-col justify-between p-6 sm:p-8 lg:p-12 animate-pulse">
+                  <div>
+                    <div className="h-8 w-3/4 bg-neutral-800 rounded-md"></div>
+                    <div className="mt-4 h-6 w-full bg-neutral-800 rounded-md"></div>
+                    <div className="mt-2 h-6 w-5/6 bg-neutral-800 rounded-md"></div>
+                  </div>
+                  <div className="mt-10 flex flex-col gap-4 rounded-xl border border-neutral-800 bg-neutral-900/30 p-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="h-14 w-14 rounded-lg bg-neutral-800"></div>
+                      <div className="space-y-2">
+                        <div className="h-5 w-32 bg-neutral-800 rounded-md"></div>
+                        <div className="h-4 w-24 bg-neutral-800 rounded-md"></div>
+                      </div>
+                    </div>
+                    <div className="h-12 w-36 rounded-lg bg-neutral-800"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
             <StaggerContainer staggerDelay={0.2} className="grid grid-cols-1 divide-y divide-neutral-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
               {testimonials.map((item, index) => (

@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import FadeIn from "./motion/FadeIn";
 import StaggerContainer from "./motion/StaggerContainer";
 import StaggerItem from "./motion/StaggerItem";
+import SectionBackground from "./SectionBackground";
 
 const features = [
   {
@@ -32,26 +33,11 @@ const features = [
 export default function WhyChoose() {
   return (
     <section>
-      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
+      <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="border-x border-b border-neutral-800">
           {/* Header */}
           <div className="relative overflow-hidden border-b border-neutral-800 px-4 py-12 text-center sm:px-6 sm:py-16 md:px-20 md:py-20 xl:px-72">
-            {/* Animated background */}
-            <div className="absolute inset-0 overflow-hidden">
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-image-zoom"
-                style={{ backgroundImage: "url('/image/Why-Choose.png')" }}
-              />
-              <div
-                className="absolute inset-0 animate-bg-glow-slow"
-                style={{
-                  background: "radial-gradient(ellipse at 50% 30%, rgba(163, 230, 53, 0.12), transparent 70%)",
-                  opacity: 0.25,
-                }}
-              />
-            </div>
-            <div className="absolute inset-0 bg-black/50 animate-overlay-breathe" />
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lime-400/30 to-transparent animate-border-glow" />
+            <SectionBackground src="/image/Why-Choose.webp" />
 
             <div className="relative z-10">
               <FadeIn>
