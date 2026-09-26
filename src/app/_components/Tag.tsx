@@ -40,6 +40,11 @@ const brands = [
     name: "instrufix",
     url: "https://instrufix.com/",
     logo: "/image/instrufix-1.webp",
+  },
+  {
+    name: "vivtex",
+    url: "https://vivtex.com/",
+    logo: "/image/vivtex.webp",
   }
 ];
 
@@ -91,6 +96,7 @@ export default function TrustedCompanies() {
                       height={80}
                       className="h-20 w-auto object-contain max-w-[200px]"
                       loading="lazy"
+                      quality={60}
                     />
                   )}
                   <span className="text-xs font-semibold text-neutral-300 whitespace-nowrap tracking-[0.14em] uppercase">
