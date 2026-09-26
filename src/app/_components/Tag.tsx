@@ -22,24 +22,24 @@ const brands = [
     logo: "https://actonclimate.co/logo.png",
   },
   {
-    name: "DocTime",
-    url: "https://doctime.com.bd/",
-    logo: "https://doctime.com.bd/images/logo/doctime_logo.webp",
-  },
-  {
     name: "scuba life",
     url: "http://scubalife.net/",
-    logo: "http://scubalife.net/_next/static/media/logo.165f1e9c.png",
+    logo: "/image/scubalife.avif",
   },
   {
     name: "Social Chamber",
     url: "https://www.thesocialchamber.com/",
-    logo: "https://www.thesocialchamber.com/img/logo.png",
+    logo: "/image/thesocialchamber.avif",
   },
   {
     name: "SecondSight",
     url: "https://secondsight.tech/",
     logo: "/image/secondsigt.webp",
+  },
+  {
+    name: "sktchlabs",
+    url: "https://sktchlabs.com/",
+    logo: "/image/sketchlabs.webp",
   }
 ];
 
@@ -73,7 +73,7 @@ export default function TrustedCompanies() {
                 ease: "linear",
                 duration: 20,
               }}
-              className="flex w-max space-x-24 items-center pr-24"
+              className="flex w-max space-x-24 items-center pr-24 will-change-transform"
             >
               {duplicatedBrands.map((brand, index) => (
                 <a
