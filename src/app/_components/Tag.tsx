@@ -45,6 +45,11 @@ const brands = [
     name: "vivtex",
     url: "https://vivtex.com/",
     logo: "/image/vivtex.webp",
+  },
+  {
+    name: "bailunbio",
+    url: "https://bailunbio.cn/",
+    logo: "/image/bailun.png",
   }
 ];
 
