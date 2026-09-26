@@ -17,11 +17,6 @@ const brands = [
     logo: "https://vendofood.com/images/logo.svg",
   },
   {
-    name: "act on climate",
-    url: "https://actonclimate.co/about",
-    logo: "https://actonclimate.co/logo.png",
-  },
-  {
     name: "scuba life",
     url: "http://scubalife.net/",
     logo: "/image/scubalife.avif",
@@ -40,6 +35,11 @@ const brands = [
     name: "sktchlabs",
     url: "https://sktchlabs.com/",
     logo: "/image/sketchlabs.webp",
+  },
+  {
+    name: "instrufix",
+    url: "https://instrufix.com/",
+    logo: "/image/instrufix-1.webp",
   }
 ];
 
