@@ -37,6 +37,10 @@ export const metadata: Metadata = {
     "full-stack development",
     "cloud DevOps",
     "React Next.js agency",
+    "build a website",
+    "website redesign",
+    "build custom software",
+    "website development",
   ],
   robots: {
     index: true,

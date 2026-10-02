@@ -11,11 +11,11 @@ import SectionBackground from "./SectionBackground";
 const faqs = [
   {
     question: "What services does Tyrand provide?",
-    answer: "Tyrand offers a comprehensive range of software development services including UI/UX design, web and mobile app development, AI automation, CRM and POS system development, custom enterprise software, SaaS platform engineering, cloud and DevOps solutions, branding and identity, and ongoing project management and maintenance.",
+    answer: "Tyrand offers a comprehensive range of software development services. Whether you want to build a website from scratch, need a full website redesign, or want to build custom software, we can help. Our expertise includes UI/UX design, web and mobile app development, AI automation, CRM and POS systems, and SaaS platforms.",
   },
   {
     question: "How can Tyrand help my business?",
-    answer: "We help businesses build modern, scalable digital products that improve customer experience, increase conversions, and accelerate growth. Our deep tech expertise in AI automation, custom software, and enterprise integrations enables us to solve complex challenges that off-the-shelf solutions cannot address.",
+    answer: "We help businesses build modern, scalable digital products. If you are looking to build a website that converts visitors or need to build custom software to automate your operations, our deep tech expertise in AI and enterprise integrations will solve challenges that off-the-shelf solutions cannot.",
   },
   {
     question: "What industries does Tyrand work with?",
