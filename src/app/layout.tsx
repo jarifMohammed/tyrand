@@ -41,6 +41,10 @@ export const metadata: Metadata = {
     "website redesign",
     "build custom software",
     "website development",
+    "AI chatbot development",
+    "SEO marketing",
+    "digital marketing services",
+    "AI related services",
   ],
   robots: {
     index: true,

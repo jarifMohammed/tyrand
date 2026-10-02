@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "custom software engineering",
     "enterprise digital solutions",
     "cloud DevOps services",
+    "AI chatbot development",
+    "SEO marketing services",
+    "digital marketing agency",
   ],
   alternates: {
     canonical: "https://tyrand.dev/Services-Page",

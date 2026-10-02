@@ -11,7 +11,7 @@ import SectionBackground from "./SectionBackground";
 const faqs = [
   {
     question: "What services does Tyrand provide?",
-    answer: "Tyrand offers a comprehensive range of software development services. Whether you want to build a website from scratch, need a full website redesign, or want to build custom software, we can help. Our expertise includes UI/UX design, web and mobile app development, AI automation, CRM and POS systems, and SaaS platforms.",
+    answer: "Tyrand offers a comprehensive range of software development services. Whether you want to build a website from scratch, need a full website redesign, or want to build custom software, we can help. Our expertise includes UI/UX design, web and mobile app development, custom AI chatbots and AI related services, CRM and POS systems, SaaS platforms, as well as SEO marketing and full digital marketing services.",
   },
   {
     question: "How can Tyrand help my business?",
