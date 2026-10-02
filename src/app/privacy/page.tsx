@@ -1,5 +1,24 @@
 import React from "react";
+import type { Metadata } from "next";
 import FadeIn from "../_components/motion/FadeIn";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Tyrand — Data Protection & NDA Commitment",
+  description:
+    "Read Tyrand's privacy policy covering data protection, NDA confidentiality, GDPR/CCPA compliance, secure payment processing, and enterprise-grade security protocols for all software development projects.",
+  keywords: [
+    "privacy policy",
+    "data protection",
+    "NDA software agency",
+    "GDPR compliance",
+    "CCPA compliance",
+    "confidential software development",
+    "secure payment processing",
+  ],
+  alternates: {
+    canonical: "https://tyrand.dev/privacy",
+  },
+};
 
 export default function PrivacyPolicy() {
   return (
@@ -17,7 +36,7 @@ export default function PrivacyPolicy() {
               </p>
             </section>
             <section>
-              <h2 className="mb-4 text-2xl font-semibold text-lime-400">2. Non-Disclosure Agreements (NDA) & Confidentiality</h2>
+              <h2 className="mb-4 text-2xl font-semibold text-lime-400">2. Non-Disclosure Agreements (NDA) &amp; Confidentiality</h2>
               <p>
                 As an agency working closely with high-end device integrations and revolutionary software ideas, confidentiality is not an option—it is our baseline. All projects, regardless of their stage, are protected under strict Non-Disclosure Agreements (NDAs). We guarantee that your intellectual property remains exclusively yours. Our engineers and partners are legally bound to absolute secrecy regarding your technical stacks and business logic.
               </p>

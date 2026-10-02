@@ -32,7 +32,7 @@ const features = [
 
 export default function WhyChoose() {
   return (
-    <section>
+    <section id="why-choose" aria-label="Why choose Tyrand for your software development">
       <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="border-x border-b border-neutral-800">
           {/* Header */}

@@ -20,7 +20,7 @@ export default function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 0.5], [0, -60]);
 
   return (
-    <section ref={ref} className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
+    <section ref={ref} id="hero" aria-label="Tyrand — We build software that scales" className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
       <div className="relative overflow-hidden border border-neutral-800 bg-cover bg-center bg-no-repeat py-20 sm:py-24 md:py-32 lg:py-44 xl:py-60">
         {/* Parallax Background — using next/image for optimization */}
         <div className="absolute inset-0 overflow-hidden">
@@ -33,12 +33,12 @@ export default function Hero() {
           >
             <Image
               src="/image/hero-bg.webp"
-              alt=""
+              alt="Tyrand deep tech software development — abstract technology background"
               fill
               priority
               sizes="100vw"
               className="object-cover object-center"
-              quality={80}
+              quality={60}
             />
           </motion.div>
           <div

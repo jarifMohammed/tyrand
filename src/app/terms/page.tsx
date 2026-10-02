@@ -1,5 +1,23 @@
 import React from "react";
+import type { Metadata } from "next";
 import FadeIn from "../_components/motion/FadeIn";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Tyrand — Master Service Agreement",
+  description:
+    "Review Tyrand's terms of service covering intellectual property rights, NDA protections, transparent payment terms, project scope management, and liability for custom software development projects.",
+  keywords: [
+    "terms of service",
+    "software development agreement",
+    "intellectual property rights",
+    "NDA protection",
+    "transparent payment terms",
+    "master service agreement",
+  ],
+  alternates: {
+    canonical: "https://tyrand.dev/terms",
+  },
+};
 
 export default function TermsOfService() {
   return (
@@ -17,13 +35,13 @@ export default function TermsOfService() {
               </p>
             </section>
             <section>
-              <h2 className="mb-4 text-2xl font-semibold text-lime-400">2. Deep Tech & Intellectual Property</h2>
+              <h2 className="mb-4 text-2xl font-semibold text-lime-400">2. Deep Tech &amp; Intellectual Property</h2>
               <p>
                 We operate at the forefront of technological innovation. Unless explicitly stated otherwise in a separate Master Service Agreement (MSA), upon final payment, the client retains full intellectual property rights to the custom code, algorithms, and architectures developed specifically for their project. We take extreme measures to ensure that your proprietary ideas are protected and strictly segregated from other engagements.
               </p>
             </section>
             <section>
-              <h2 className="mb-4 text-2xl font-semibold text-lime-400">3. Non-Disclosure & Secrecy</h2>
+              <h2 className="mb-4 text-2xl font-semibold text-lime-400">3. Non-Disclosure &amp; Secrecy</h2>
               <p>
                 We mandate mutual Non-Disclosure Agreements (NDAs) for all deep tech projects. Tyrand engineers are bound by severe confidentiality clauses. We do not publish case studies or reference your technology stack without explicit, written authorization from your legal representatives.
               </p>
@@ -35,13 +53,13 @@ export default function TermsOfService() {
               </p>
             </section>
             <section>
-              <h2 className="mb-4 text-2xl font-semibold text-lime-400">5. Project Scope & Revisions</h2>
+              <h2 className="mb-4 text-2xl font-semibold text-lime-400">5. Project Scope &amp; Revisions</h2>
               <p>
                 Because deep tech development involves exploring unknown technological territories, project scopes are managed agilely. Any major structural pivot in the architecture or hardware integration will trigger a formalized Change Request, ensuring both timeline and budget expectations are transparently updated and mutually agreed upon.
               </p>
             </section>
             <section>
-              <h2 className="mb-4 text-2xl font-semibold text-lime-400">6. Liability & Warranties</h2>
+              <h2 className="mb-4 text-2xl font-semibold text-lime-400">6. Liability &amp; Warranties</h2>
               <p>
                 While we build highly resilient and scalable systems, Tyrand provides software &quot;as is&quot; upon deployment. However, we typically engage in continuous Service Level Agreements (SLAs) for post-launch monitoring, patching, and scaling.
               </p>

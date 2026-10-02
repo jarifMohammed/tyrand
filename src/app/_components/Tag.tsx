@@ -60,7 +60,7 @@ export default function TrustedCompanies() {
   const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <section ref={ref} className="text-center w-full">
+    <section ref={ref} id="trusted-companies" aria-label="Trusted by 25+ companies worldwide" className="text-center w-full">
       <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="relative border-x border-b border-neutral-800 bg-neutral-900/20 py-10 flex flex-col items-center">
           {/* Badge */}

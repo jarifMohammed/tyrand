@@ -8,7 +8,7 @@ import SectionBackground from "./SectionBackground";
 
 export default function CTA() {
   return (
-    <section>
+    <section id="contact-cta" aria-label="Start your project with Tyrand">
       <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="relative overflow-hidden border-x border-b border-neutral-800 px-4 py-12 sm:px-6 sm:py-16 md:px-20 md:py-20 xl:px-72">
           <SectionBackground src="/image/CTA.webp" />

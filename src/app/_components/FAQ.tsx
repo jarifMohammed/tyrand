@@ -9,21 +9,45 @@ import StaggerItem from "./motion/StaggerItem";
 import SectionBackground from "./SectionBackground";
 
 const faqs = [
-  { question: "What services does Tyrand provide?", answer: "Tyrand offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." },
-  { question: "How can Tyrand help my business?", answer: "We help businesses build modern digital products that improve customer experience, increase conversions, and accelerate growth." },
-  { question: "What industries does Tyrand work with?", answer: "We work with startups, SaaS companies, healthcare, finance, education, e-commerce, real estate, and enterprise organizations." },
-  { question: "How long does it take to complete a project with Tyrand?", answer: "Project timelines depend on complexity, but most projects are completed within 4\u201312 weeks." },
-  { question: "Do you offer ongoing support and maintenance after the project is completed?", answer: "Yes. We provide continuous maintenance, performance monitoring, bug fixes, and feature updates." },
-  { question: "Can you work with existing design or development frameworks?", answer: "Absolutely. We can work with your existing design systems, component libraries, and development stack." },
-  { question: "How involved will I be in the project development process?", answer: "You\u2019ll be involved throughout the process with regular meetings, demos, and progress updates." },
-  { question: "Can you help with website or app maintenance and updates?", answer: "Yes. We provide long-term website and application support, optimization, security updates, and feature enhancements." },
+  {
+    question: "What services does Tyrand provide?",
+    answer: "Tyrand offers a comprehensive range of software development services including UI/UX design, web and mobile app development, AI automation, CRM and POS system development, custom enterprise software, SaaS platform engineering, cloud and DevOps solutions, branding and identity, and ongoing project management and maintenance.",
+  },
+  {
+    question: "How can Tyrand help my business?",
+    answer: "We help businesses build modern, scalable digital products that improve customer experience, increase conversions, and accelerate growth. Our deep tech expertise in AI automation, custom software, and enterprise integrations enables us to solve complex challenges that off-the-shelf solutions cannot address.",
+  },
+  {
+    question: "What industries does Tyrand work with?",
+    answer: "We work across diverse industries including FinTech and banking, HealthTech and MedTech, SaaS platforms, e-commerce, AI and machine learning, logistics and supply chain, education, real estate, and enterprise organizations. Our team adapts to each industry's regulatory and technical requirements.",
+  },
+  {
+    question: "How long does it take to complete a project with Tyrand?",
+    answer: "Project timelines depend on complexity and scope. Most projects are completed within 4–12 weeks. We follow an agile development methodology with regular milestones, demos, and transparent progress tracking to ensure timely delivery.",
+  },
+  {
+    question: "Do you offer ongoing support and maintenance after the project is completed?",
+    answer: "Yes. We provide continuous post-launch support including performance monitoring, bug fixes, security updates, feature enhancements, and optimization. We offer flexible Service Level Agreements (SLAs) tailored to your needs.",
+  },
+  {
+    question: "Can you work with existing design or development frameworks?",
+    answer: "Absolutely. Our engineers and designers can seamlessly integrate with your existing design systems, component libraries, development stack, and CI/CD pipelines. We adapt to your tech ecosystem rather than forcing you to adopt ours.",
+  },
+  {
+    question: "How involved will I be in the project development process?",
+    answer: "You'll be closely involved throughout the entire process. We maintain radical transparency with regular sprint meetings, progress demos, design reviews, and real-time communication channels to ensure the product aligns with your vision.",
+  },
+  {
+    question: "Can you help with website or app maintenance and updates?",
+    answer: "Yes. We provide comprehensive long-term website and application support, including performance optimization, security updates, accessibility improvements, feature enhancements, and tech stack upgrades to keep your digital products modern and competitive.",
+  },
 ];
 
 export default function FAQ() {
   const [active, setActive] = useState(0);
 
   return (
-    <section>
+    <section id="faq" aria-label="Frequently asked questions about Tyrand">
       <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-36">
         <div className="border-x border-b border-neutral-800">
           {/* Header */}
@@ -37,7 +61,7 @@ export default function FAQ() {
               <FadeIn delay={0.15}>
                 <p className="mt-4 text-lg text-neutral-300">
                   Still have any questions? Contact our team via{" "}
-                  <span className="text-lime-400 cursor-pointer">info.tyrand@gmail.com</span>
+                  <a href="mailto:info.tyrand@gmail.com" className="text-lime-400 cursor-pointer hover:underline">info.tyrand@gmail.com</a>
                 </p>
               </FadeIn>
             </div>
@@ -53,7 +77,7 @@ export default function FAQ() {
                   return (
                     <StaggerItem key={faq.question}>
                       <div className="border-b border-neutral-800">
-                        <button onClick={() => setActive(open ? -1 : faqIndex)} className="flex w-full items-start gap-3 px-4 py-6 text-left transition hover:bg-neutral-900/40 sm:gap-6 sm:px-8 sm:py-8">
+                        <button onClick={() => setActive(open ? -1 : faqIndex)} className="flex w-full items-start gap-3 px-4 py-6 text-left transition hover:bg-neutral-900/40 sm:gap-6 sm:px-8 sm:py-8" aria-expanded={open} aria-controls={`faq-answer-${faqIndex}`}>
                           <motion.div
                             animate={{ borderColor: open ? "rgba(163, 230, 53, 0.5)" : "rgba(38, 38, 38, 1)", color: open ? "#a3e635" : "#ffffff", scale: open ? 1.05 : 1 }}
                             transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
@@ -70,7 +94,7 @@ export default function FAQ() {
                             </div>
                             <AnimatePresence>
                               {open && (
-                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ height: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: 0.3, delay: 0.05 } }} className="overflow-hidden">
+                                <motion.div id={`faq-answer-${faqIndex}`} role="region" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ height: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: 0.3, delay: 0.05 } }} className="overflow-hidden">
                                   <p className="mt-5 text-base leading-7 text-neutral-300 sm:text-lg sm:leading-8">{faq.answer}</p>
                                 </motion.div>
                               )}

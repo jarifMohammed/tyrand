@@ -49,7 +49,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
           {navLinks.map((item, index) => (
             <motion.div
               key={item.name}

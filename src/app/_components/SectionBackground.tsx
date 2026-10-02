@@ -13,9 +13,9 @@ export default function SectionBackground({ src, priority = false }: SectionBack
           src={src}
           alt=""
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
           className="object-cover object-center animate-image-zoom"
-          quality={75}
+          quality={50}
           priority={priority}
           loading={priority ? "eager" : "lazy"}
         />
