@@ -1,0 +1,32 @@
+# Tyrand — Deep Tech Software Agency
+
+Tyrand is a premier Helsinki-based software engineering agency specializing in deep tech, AI automation, CRM/POS systems, SaaS platforms, and enterprise digital solutions. We engineer complex, scalable digital products for startups and enterprises worldwide.
+
+## Core Services
+- Custom Software Development
+- AI Chatbot Development & AI Related Services
+- UI/UX Architecture & Design
+- SaaS Platform Engineering
+- CRM & POS System Development
+- Cloud Infrastructure & DevOps
+- SEO & Digital Marketing Services
+
+## Industries Served
+- FinTech & Banking (Blockchain, DeFi, PCI-DSS compliance)
+- HealthTech & MedTech (HIPAA compliance, IoT medical devices)
+- SaaS Platforms (Microservices, Kubernetes)
+- E-Commerce (Headless commerce, AI recommendation engines)
+- Logistics & Supply Chain (Real-time tracking, algorithmic routing)
+
+## Company Information
+- **Location:** Pekankatu 5 A 21, Helsinki 00700, Finland
+- **Contact:** info.tyrand@gmail.com
+- **Website:** https://tyrand.dev
+
+## Key Pages
+- About Us: https://tyrand.dev/about
+- Our Services: https://tyrand.dev/Services-Page
+- Portfolio & Case Studies: https://tyrand.dev/protfolio
+- Development Process: https://tyrand.dev/process
+- Careers: https://tyrand.dev/careers
+- Contact: https://tyrand.dev/contact
