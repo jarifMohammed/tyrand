@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "./_components/Footer";
 import Navbar from "./_components/navber";
 import PageTransition from "./_components/motion/PageTransition";
+import GoogleAnalytics from "./_components/GoogleAnalytics";
 
 
 const geistSans = localFont({
@@ -156,6 +157,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://vendofood.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Google Analytics & Tag Manager preconnect / dns-prefetch */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
         {/* Organization structured data */}
         <script
@@ -171,6 +175,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${playfair.variable} antialiased`}
       >
+        <GoogleAnalytics />
         <Navbar />
         <PageTransition>{children}</PageTransition>
         <Footer />

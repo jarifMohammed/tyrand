@@ -5,6 +5,7 @@ import FadeIn from "../../_components/motion/FadeIn";
 import StaggerContainer from "../../_components/motion/StaggerContainer";
 import StaggerItem from "../../_components/motion/StaggerItem";
 import MagneticButton from "../../_components/motion/MagneticButton";
+import { trackLead } from "@/lib/gtag";
 
 type ContactFormData = {
   fullName: string;
@@ -60,6 +61,13 @@ export default function ContactForm() {
       const data = await res.json();
 
       if (data.success) {
+        // Track production conversion event in GA4
+        trackLead({
+          formName: "Agency Contact Inquiry",
+          budget: formData.budget,
+          reasons: formData.contactReasons,
+        });
+
         setSubmitMessage("Thank you! We have received your inquiry.");
         setFormData({
           fullName: "",
